@@ -80,12 +80,13 @@
 					<h3>Example Code</h3>
 				</div>
 				<pre><code class="javascript">
-import { serve } from "https://deno.land/std@v0.30.0/http/server.ts";
+import { serve } from 'https://deno.land/std@v0.30.0/http/server.ts';
 
-const s = serve({ port: 5000 });console.log("Listening on http://localhost:5000/");
+const s = serve({ port: 80 });
+console.log('Listening on http://localhost:80/');
 
 for await (const req of s) {
-  req.respond({ body: "Hello World!!" });
+  req.respond({ body: 'Hello World!' });
 }
 				</code></pre>
 				</div>
