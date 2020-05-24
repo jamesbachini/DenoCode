@@ -1,4 +1,9 @@
-console.log('Wait for it...');
-const timer : number = 2000;
-await new Promise(r => setTimeout(r, timer));
-console.log('boo!');
+import { serve } from 'https://deno.land/std/http/server.ts';
+const port : number = 8000;
+const s = serve({ port });
+console.log(`Listening on http://localhost:${port}/`);
+
+for await (const req of s) {
+	req.respond({ body: 'Hello Typescript!' });
+}
+
