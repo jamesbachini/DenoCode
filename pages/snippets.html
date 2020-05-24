@@ -1,0 +1,329 @@
+<div class="full-width bkg-grey">
+	<div class="container text-center jumbotron">
+		<p class="jumbo-tag">Deno <span class="vbold">Example</span> Code</p>
+	</div>
+	<hr class="light-grey">
+</div>
+
+<div class="full-width">
+	</div><div class="container">
+		<p>This section is a collection of <a href="https://github.com/jamesbachini/DenoCode" target="_blank"></a>user contribtued</a> code snippets to be copy and pasted in common scenarios (or if stackoverflow goes down).</p>
+		<ul>
+			<li><a href="#maths">Maths</a></li>
+			<li><a href="#files">Read/Write Files</a></li>
+			<li><a href="#args">Command Line Arguments</a></li>
+			<li><a href="#imports">Local Imports</a></li>
+			<li><a href="#scrape">Website Scraper</a></li>
+			<li><a href="#scrape">Async/Await</a></li>
+			<li><a href="#blank">Blank Sample</a></li>
+		</ul>
+		<hr class="light-grey">
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="maths">Maths</h3>
+		<p>
+			Basic maths using the calc.ts module
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">maths.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-maths-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-maths-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-maths-js">
+import {
+	divide,
+	multiply,
+	power,
+	sum,
+	subtract,
+} from 'https://raw.githubusercontent.com/beeman/deno-examples/master/libs/calc.ts'
+
+const a = 2;
+const b = 4;
+
+let c = divide(a, b);
+c = multiply(a, b);
+c = power(a, b);
+c = sum(a, b);
+c = subtract(a, b);
+console.log(c);
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-maths-ts">
+import {
+	divide,
+	multiply,
+	power,
+	sum,
+	subtract,
+} from 'https://raw.githubusercontent.com/beeman/deno-examples/master/libs/calc.ts'
+
+declare const a: number = 2;
+declare const b: number = 4;
+declare let c: number;
+
+c = divide(a, b);
+c = multiply(a, b);
+c = power(a, b);
+c = sum(a, b);
+c = subtract(a, b);
+console.log(c);
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console">deno run ./maths.<span class="ts">ts</span><span class="js">js</span></div>
+	</div>
+</div>
+		
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="files">Read/Write Files</h3>
+		<p>
+		Read/Write Files To &amp; From Hard Disk
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">files.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-files-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-files-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-files-js">
+const decoder = new TextDecoder('utf-8');
+const text = decoder.decode(await Deno.readFile('input.txt'));
+console.log(text);
+const encoder = new TextEncoder();
+const data = encoder.encode(`Hello world\nNew Line`);
+await Deno.writeFile('output.txt', data);
+console.log('Wrote to output.txt');
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-files-ts">
+const decoder = new TextDecoder('utf-8');
+const text = decoder.decode(await Deno.readFile('input.txt'));
+console.log(text);
+const encoder = new TextEncoder();
+const data = encoder.encode(`Hello world\nNew Line`);
+await Deno.writeFile('output.txt', data);
+console.log('Wrote to output.txt');
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console">deno run --allow-read --allow-write ./files.<span class="ts">ts</span><span class="js">js</span></div>
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="args">Command line arguments</h3>
+		<p>
+			How to pass arguments to Deno from the command line
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">args.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-args-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-args-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-args-js">
+let filename = Deno.args[0];
+
+for (let i = 0; i < Deno.args.length; i++) {
+	console.log(Deno.args[i]);
+}
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-args-ts">
+let filename: string = Deno.args[0];
+
+for (let i:number = 0; i < Deno.args.length; i++) {
+	console.log(Deno.args[i]);
+}
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console">deno run ./args.<span class="ts">ts</span><span class="js">js</span> test1 test2 test3</div>
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="imports">Local Imports</h3>
+		<p>
+			Local imports for using modules in your code.
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">module.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-module-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-module-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-module-js">
+export function myFunc (subject) {
+	console.log(subject);
+}
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-module-ts">
+export function myFunc (subject: string) {
+	console.log(subject);
+}
+				</code></pre>		
+			</div>
+		</div>
+
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">import.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-import-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-import-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-import-js">
+import { myFunc } from './print.js';
+myFunc('Hello Modules');
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-import-ts">
+import { myFunc } from './print.ts';
+myFunc('Hello Modules');
+				</code></pre>		
+			</div>
+		</div>
+	<div class="console">deno run --allow-read ./import.<span class="ts">ts</span><span class="js">js</span></div>
+	</div>
+</div>
+
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="scrape">Scrape website content</h3>
+		<p>
+			A simple scraper based on fetch API which is core in Deno
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">scrape.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-scrape-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-scrape-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-scrape-js">
+fetch('https://denocode.com/').then(async (response) => {
+	const text = await response.text();
+	const title = text.split('<title>')[1].split('</title>')[0];
+	console.log(title);
+});
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-scrape-ts">
+fetch('https://denocode.com/').then(async (response) => {
+	const text : string = await response.text();
+	const title : string = text.split('<title>')[1].split('</title>')[0];
+	console.log(title);
+});
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console">deno run --allow-net ./scrape.<span class="ts">ts</span><span class="js">js</span></div>
+		<p>(Please don't scrape this site 😨)</p>
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="async">Async/Await</h3>
+		<p>
+			Asynchronous Async/Await code is really easy in Deno. It just works.
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">async.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-async-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-async-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-async-js">
+console.log('Wait for it...');
+await new Promise(r => setTimeout(r, 2000));
+console.log('boo!');
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-async-ts">
+console.log('Wait for it...');
+const timer : number = 2000;
+await new Promise(r => setTimeout(r, timer));
+console.log('boo!');
+				</code></pre>		
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Leave One Example Below This Line -->
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="blank">Blank Sample For Contributors</h3>
+		<p>
+		
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">blank.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="snippet-code-blank-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="snippet-code-blank-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-blank-js">
+
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-blank-ts">
+
+				</code></pre>		
+			</div>
+		</div>
+	</div>
+</div>
+

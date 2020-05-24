@@ -1,0 +1,132 @@
+<div class="full-width bkg-grey">
+	<div class="container text-center jumbotron">
+		<p class="jumbo-tag">Deno <span class="vbold">Example</span> Code</p>
+	</div>
+	<hr class="light-grey">
+</div>
+
+<div class="full-width">
+	</div><div class="container">
+		<p>Simple examples of Deno code in Javascript and Typescript. Example code is <a href="https://github.com/jamesbachini/DenoCode" target="_blank"></a>open-source</a>.</p>
+		<ul>
+			<li><a href="#server">Basic Server</a></li>
+			<li><a href="#docker">Docker</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#blank">Blank Sample</a></li>
+		</ul>
+		<hr class="light-grey">
+	</div>
+</div>
+
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="server">Basic Server</h3>
+		<p>
+			This example shows how to set up a basic server and display content based on routes in a similar way to how express does it in node.js
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">server.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="exaples-code-server-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="exaples-code-server-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="exaples-code-server-js">
+import Aqua from "https://deno.land/x/aqua/aqua.ts";
+const app = new Aqua(8000);
+
+app.get('/', (req) => {
+	return 'Server running on port 8000';
+});
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="exaples-code-server-ts">
+import Aqua from "https://deno.land/x/aqua/aqua.ts";
+const app = new Aqua(8000);
+
+app.get('/', (req) => {
+	return 'Server running on port 8000';
+});
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console">deno run --allow-net ./server.<span class="ts">ts</span><span class="js">js</span></div>
+		<img src="img/screenshots/server.png" class="responsive-image" />
+	</div>
+</div>
+
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="docker">Docker</h3>
+		<p>
+		
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">blank.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-code-copy js" data-selection="examples-code-docker">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="docker" id="examples-code-docker">
+FROM denocode/server:1.0.0
+
+EXPOSE 8000  # Port.
+
+WORKDIR /app
+
+USER deno
+
+COPY server.ts .
+RUN deno cache server.ts
+
+ADD . .
+RUN deno cache server.ts
+
+CMD ["--allow-net", "server.ts"]
+				</code></pre>
+			</div>
+		</div>
+		<div class="console">docker build -t app . && docker run -it --init -p 8000:8000 app</div>
+	</div>
+</div>
+
+
+<!-- Leave One Example Below This Line -->
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="blank">Blank Sample For Contributors</h3>
+		<p>
+		
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">blank.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="examples-code-blank-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="examples-code-blank-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="examples-code-blank-js">
+
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="examples-code-blank-ts">
+
+				</code></pre>		
+			</div>
+		</div>
+	</div>
+</div>

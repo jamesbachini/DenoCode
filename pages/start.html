@@ -1,6 +1,12 @@
+<div class="full-width bkg-grey">
+	<div class="container text-center jumbotron">
+		<p class="jumbo-tag">How To <span class="vbold">Get Started</span> With Deno</p>
+	</div>
+	<hr class="light-grey">
+</div>
+
 <div class="full-width">
 	</div><div class="container">
-		<h2>How To Get Started With Deno</h2>
 		<p>In this section we will run through how to get started with Deno.</p>
 		<ul>
 			<li><a href="#installation">Installation</a></li>
@@ -97,6 +103,48 @@ for await (const req of s) {
 
 		<p>Then open up a console or powershell window and navigate to the directory where the saved file is. Run this command:</p>
 		<div class="console">deno run --A ./myserver.<span class="ts">ts</span><span class="js">js</span></div>
+
+		<h4>Command Line Tools</h4>
+		<p>Deno comes complete with a number of tools as part of its core</p>		
+		<ul>
+			<li><span class="bold">bundle</span> bundle module and dependencies of a project into single file</li>
+			<li><span class="bold">cache</span> cache the dependencies</li>
+			<li><span class="bold">completions</span> generate shell completions</li>
+			<li><span class="bold">doc</span> show documentation for a module</li>
+			<li><span class="bold">eval</span> to evaluate a piece of code, e.g. deno eval "console.log(1 + 2)"</li>
+			<li><span class="bold">fmt</span> a built-in code formatter (similar to gofmt in Go)</li>
+			<li><span class="bold">help</span> prints this message or the help of the given subcommand(s)</li>
+			<li><span class="bold">info</span> show info about cache or info related to source file</li>
+			<li><span class="bold">install</span> install script as an executable</li>
+			<li><span class="bold">repl</span> Read-Eval-Print-Loop (the default)</li>
+			<li><span class="bold">run</span> run a program given a filename or url to the module</li>
+			<li><span class="bold">test</span> run tests</li>
+			<li><span class="bold">types</span> print runtime TypeScript declarations</li>
+			<li><span class="bold">upgrade</span> upgrade deno to the newest version</li>
+		</ul>
+		<h4>Options</h4>
+		<pre>
+-h, --help
+				Prints help information
+
+-L, --log-level
+				Set log level [possible values: debug, info]
+
+-q, --quiet
+				Suppress diagnostic output
+				By default, subcommands print human-readable diagnostic messages to stderr.
+				If the flag is set, restrict these messages to errors.
+-V, --version
+				Prints version information
+		</pre>
+		<h4>Environmental Variables</h4>
+		<ul>
+			<li><span class="bold">DENO_DIR</span> Set deno's base directory (defaults to $HOME/.deno)</li>
+			<li><span class="bold">DENO_INSTALL_ROOT</span> Set deno install's output directory (defaults to $HOME/.deno/bin)</li>
+			<li><span class="bold">NO_COLOR</span> Set to disable color</li>
+			<li><span class="bold">HTTP_PROXY</span> Proxy address for HTTP requests (module downloads, fetch)</li>
+			<li><span class="bold">HTTPS_PROXY</span>Same but for HTTPS</li>
+		</ul>
 	</div>
 </div>
 <div class="full-width bkg-light-grey">
