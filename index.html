@@ -122,9 +122,29 @@ for await (const req of s) {
 					<div class="full-width text-center">
 						<h3>Where next?</h3>
 					</div>
-					<p class="where-next full-width text-center">
-						<a href="/start=1">Start</a> | <a href="/examples=1">Examples</a> | <a href="/snippets=1">Snippets</a> | <a href="/community=1">Community</a> | <a href="/errors=1">Errors</a>
-					</p>
+					<div class="flex-row flex-wrap">
+						<div class="flex-1 where-next-box">
+							<img src="img/icons/laptop-code.svg" class="where-next-icon" />
+							<br>
+							<a href="/index.html?start=1">Start</a>
+						</div>
+						<div class="flex-1 where-next-box">
+							<img src="img/icons/window-restore.svg" class="where-next-icon" />
+							<br>
+							<a href="/index.html?examples=1">Examples</a>
+						</div>
+						<div class="flex-1 where-next-box">
+							<img src="img/icons/file-code.svg" class="where-next-icon" />
+							<br>
+							<a href="/index.html?snippets=1">Snippets</a>
+						</div>
+						<div class="flex-1 where-next-box">
+							<img src="img/icons/users.svg" class="where-next-icon" />
+							<br>
+							<a href="/index.html?community=1">Community</a>
+						</div>
+					</div>
+					
 					<div class="spacer">&nbsp;</div>
 				</div>
 				<hr class="light-grey">

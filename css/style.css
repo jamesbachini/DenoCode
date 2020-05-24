@@ -335,9 +335,6 @@ table tr:nth-child(even) {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
-.where-next {
-	font-size: 1.2em;
-}
 .code-container {
 	border: 2px solid #222;
 }
@@ -355,6 +352,27 @@ table tr:nth-child(even) {
 	margin: -16px 0px;
 	text-align: left;
 }
+
+.where-next-icon {
+	height: 50px;
+	filter: invert(13%) sepia(29%) saturate(765%) hue-rotate(197deg) brightness(98%) contrast(88%);
+}
+
+.where-next-box {
+	border: 3px solid #2b2d42;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.where-next-box a, .where-next-box a:visited, .where-next-box a:active, .where-next-box a:hover {
+	color: #2b2d42;
+	font-size: 1.4em;
+	text-decoration: none;
+	font-weight: 900;
+} 
 
 @media only screen and (max-width: 720px) {
 	.desktop-hidden {

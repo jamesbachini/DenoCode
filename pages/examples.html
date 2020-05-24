@@ -11,8 +11,7 @@
 		<ul>
 			<li><a href="#server">Basic Server</a></li>
 			<li><a href="#docker">Docker</a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#websockets">Websockets</a></li>
 			<li><a href="#blank">Blank Sample</a></li>
 		</ul>
 		<hr class="light-grey">
@@ -101,12 +100,83 @@ CMD ["--allow-net", "server.ts"]
 </div>
 
 
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="websockets">Deno Websockets Example/h3>
+		<p>
+			This uses the websockets API to create a WS server on port 8000. There's also a more advanced chat server example <a href="https://deno.land/std/examples/chat" target="_blank">here</a>.
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">websockets.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="examples-code-websockets-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="examples-code-websockets-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="examples-code-websockets-js">
+import { serve } from 'https://deno.land/std/http/server.ts';
+import {
+	acceptWebSocket,
+	isWebSocketCloseEvent,
+	isWebSocketPingEvent,
+} from 'https://deno.land/std/ws/mod.ts';
+const port = Deno.args[0] || '8000';
+console.log(`websocket server is running on :${port}`);
+for await (const req of serve(`:${port}`)) {
+	const { conn, r: bufReader, w: bufWriter, headers } = req;
+	const sock = await acceptWebSocket({
+		conn,
+		bufReader,
+		bufWriter,
+		headers,
+	});
+	for await (const ev of sock) {
+		console.log(ev);
+		await sock.send(ev);
+	}
+}
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="examples-code-websockets-ts">
+import { serve } from 'https://deno.land/std/http/server.ts';
+import {
+	acceptWebSocket,
+	isWebSocketCloseEvent,
+	isWebSocketPingEvent,
+} from 'https://deno.land/std/ws/mod.ts';
+const port : string = Deno.args[0] || '8000';
+console.log(`websocket server is running on :${port}`);
+for await (const req of serve(`:${port}`)) {
+	const { conn, r: bufReader, w: bufWriter, headers } = req;
+	const sock = await acceptWebSocket({
+		conn,
+		bufReader,
+		bufWriter,
+		headers,
+	});
+	for await (const ev of sock) {
+		console.log(ev);
+		await sock.send(ev);
+	}
+}
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console">deno run --allow-net app.js</div>
+	</div>
+</div>
+
+
 <!-- Leave One Example Below This Line -->
 <div class="full-width bkg-light-grey">
 	<div class="container v-padding">
 		<h3 id="blank">Blank Sample For Contributors</h3>
 		<p>
-		
+			Do a push request on the <a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"> repository</a> to add code snippets or make improvements.
 		</p>
 		<div class="code-container">
 			<div class="code-header">
@@ -128,5 +198,6 @@ CMD ["--allow-net", "server.ts"]
 				</code></pre>		
 			</div>
 		</div>
+		<div class="console">deno run app.js</div>
 	</div>
 </div>
