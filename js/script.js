@@ -11,12 +11,26 @@ if (utils.get.privacy) utils.loadPage('pages/privacy.html','content', (pageConte
 	return pageContent.split('[brand]').join(brand);
 });
 
-if (utils.get.start) utils.loadPage('pages/start.html','content');
-if (utils.get.examples) utils.loadPage('pages/examples.html','content');
-if (utils.get.snippets) utils.loadPage('pages/snippets.html','content');
-if (utils.get.community) utils.loadPage('pages/community.html','content');
-if (utils.get.errors) utils.loadPage('pages/errors.html','content');
-
+if (utils.get.start) {
+	utils.loadPage('pages/start.html','content');
+	document.title = 'How To Get Started With Deno';
+}
+if (utils.get.examples) {
+	utils.loadPage('pages/examples.html','content');
+	document.title = 'Deno Example Code';
+}
+if (utils.get.snippets) {
+	utils.loadPage('pages/snippets.html','content');
+	document.title = 'Deno Code Snippets';
+}
+if (utils.get.community) {
+	utils.loadPage('pages/community.html','content');
+	document.title = 'Deno Community Websites';
+}
+if (utils.get.errors) {
+	utils.loadPage('pages/errors.html','content');
+	document.title = 'Deno Error Codes &amp; Solutions';
+}
 
 
 const switchLanguage = (lang) => {

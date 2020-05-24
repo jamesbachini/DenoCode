@@ -19,7 +19,9 @@ h1, h2, h3, h4, h5 {
 h3, h4, h5 {
 	font-weight: 700;
 }
-
+a, a:visited, a:active, a:hover {
+	text-decoration: none;
+}
 [contenteditable]:focus {
 	outline: 0px solid transparent;
 }
@@ -106,9 +108,17 @@ button {
 	color: #2b2d42;
 }
 .blue {
-	color: #8d99ae;
+	color: #bdbfc3;
 }
-
+.filter-navy {
+	filter: invert(13%) sepia(29%) saturate(765%) hue-rotate(197deg) brightness(98%) contrast(88%);
+}
+.pad-left {
+	margin-left: 10px;
+}
+.pad-right {
+	margin-right: 10px;
+}
 .flex-column {
 	display: flex;
 	align-items:center;
@@ -279,10 +289,26 @@ table tr:nth-child(even) {
 	border: 1px solid #b4303b;
 }
 
+.small-icon {
+	height: 17px;
+	margin-bottom: -4px;
+}
+
+.medium-icon {
+	height: 24px;
+	margin-bottom: -4px;
+}
+
 .menu-icon {
 	filter: invert(100%);
 	height: 17px;
 	margin-bottom: -4px;
+}
+
+.standard-box {
+	border: 3px solid #2b2d42;
+	border-radius: 10px;
+	padding: 10px;
 }
 
 .jumbo-title {
@@ -337,6 +363,7 @@ table tr:nth-child(even) {
 }
 .code-container {
 	border: 2px solid #222;
+	overflow: auto;
 }
 .code-header {
 	background: #2b2d42;

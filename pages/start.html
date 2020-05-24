@@ -9,10 +9,10 @@
 	</div><div class="container">
 		<p>In this section we will run through how to get started with Deno.</p>
 		<ul>
-			<li><a href="#installation">Installation</a></li>
-			<li><a href="#environment">Coding Tools &amp; Environment</a></li>
-			<li><a href="#typescript">Typescript or Javascript</a></li>
-			<li><a href="#deployment">Deployment to Production</a></li>
+			<li><a href="#installation">🎉 Installation</a></li>
+			<li><a href="#environment">💻 Coding Tools &amp; Environment</a></li>
+			<li><a href="#typescript">🤔 Typescript or Javascript</a></li>
+			<li><a href="#deployment">✈️ Deployment to Production</a></li>
 		</ul>
 		<hr class="light-grey">
 	</div>
@@ -25,7 +25,7 @@
 		</p>
 		<div>
 			<div>
-				<h4>Windows</h4>
+				<div class="full-width text-center"><h4><img src="img/icons/windows.svg" class="medium-icon"> Windows</h4></div>
 				<h5>Recommended</h5>
 				<div class="console">iwr https://deno.land/x/install/install.ps1 -useb | iex</div>
 				<h5>Alternative</h5>
@@ -35,7 +35,7 @@
 				<div class="console spacer">brew install deno</div>
 			</div>
 			<div>
-				<h4>Mac</h4>
+				<div class="full-width text-center"><h4><img src="img/icons/apple.svg" class="medium-icon"> Mac</h4></div>
 				<h5>Recommended</h5>
 				<div class="console">curl -fsSL https://deno.land/x/install/install.sh | sh</div>
 				<h5>Alternative</h5>
@@ -43,7 +43,7 @@
 				<div class="console spacer">cargo install deno</div>
 			</div>
 			<div>
-				<h4>Linux</h4>
+				<div class="full-width text-center"><h4><img src="img/icons/linux.svg" class="medium-icon"> Linux</h4></div>
 				<h5>Recommended</h5>
 				<div class="console">curl -fsSL https://deno.land/x/install/install.sh | sh</div>
 				<h5>Alternative</h5>
@@ -163,20 +163,22 @@ for await (const req of s) {
 			<li>Desktop App development with Electron</li>
 		</ul>
 		<p>If you aren't familiar with JS or TS then Javascript is probably worth learning first. However if you are an experienced Javascript developer or you are confident in your coding abilities then Typescript is... better, at least for server-side code</p>
-		<h4>Benefits of Typescript</h4>
-		<ul>
-			<li>You'll find more bugs in development and less in production with Typescript</li>
-			<li>Typescript is strongly typed causing less weird bugs (0 !== false)</li>
-			<li>A lot of the Deno modules are written in Typescript</li>
-			<li>Typescript is to Javascript what Deno is to Node</li>
-			<li>Typescript feels less amateur hour and not as quirky for C++/Java Developers</li>
-			<li>Typescript is not a 25 year old beast that evolved from a 10 day coding project</li>
-			<li>All the latest ES6 features are available in Typescript</li>
-			<li>Typescript is growing, in 5 years time you'll probably have to use it any way</li>
-		</ul>
-		<p>
-			Underneath the hood Typescript compiles down to Javascript and just provides a layer on top with additional features to make it more robust. It's an already popular language and still growing. In 2020 there is a big enough community to copy and paste off stackoverflow just fine.
-		</p>
+		<div class="standard-box">
+			<h4>Benefits of Typescript</h4>
+			<ul>
+				<li>You'll find more bugs in development and less in production with Typescript</li>
+				<li>Typescript is strongly typed causing less weird bugs (0 !== false)</li>
+				<li>A lot of the Deno modules are written in Typescript</li>
+				<li>Typescript is to Javascript what Deno is to Node</li>
+				<li>Typescript feels less amateur hour and not as quirky for C++/Java Developers</li>
+				<li>Typescript is not a 25 year old beast that evolved from a 10 day coding project</li>
+				<li>All the latest ES6 features are available in Typescript</li>
+				<li>Typescript is growing, in 5 years time you'll probably have to use it any way</li>
+			</ul>
+			<p>
+				Underneath the hood Typescript compiles down to Javascript and just provides a layer on top with additional features to make it more robust. It's an already popular language and still growing. In 2020 there is a big enough community to copy and paste off stackoverflow just fine.
+			</p>
+		</div>
 		<p>
 			Not convinced? Give it a go for two weeks and you wont go back. Your future self will thank me by linking to this page to help others and laugh at the nights spent panicking because the production servers picked up some weird type bug that only manifests itself when there's thousands of users online.
 		</p>
