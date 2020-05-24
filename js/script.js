@@ -51,14 +51,16 @@ const switchLanguage = (lang) => {
 
 	localStorage.setItem('lang', lang);
 };
-
-
-const start = () => {
 	hljs.configure({tabReplace: '  '})
 	document.addEventListener('DOMContentLoaded', (event) => {
 		document.querySelectorAll('pre code').forEach((block) => {
 			hljs.highlightBlock(block);
 		});
+	});
+
+const start = () => {
+	document.querySelectorAll('pre code').forEach((block) => {
+		hljs.highlightBlock(block);
 	});
 
 	document.querySelectorAll('.button-js').forEach((el) => {
@@ -86,5 +88,4 @@ const start = () => {
 		switchLanguage('js');
 	}
 };
-
 start();

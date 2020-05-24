@@ -55,7 +55,7 @@ app.get('/', (req) => {
 				</code></pre>		
 			</div>
 		</div>
-		<div class="console">deno run --allow-net ./server.<span class="ts">ts</span><span class="js">js</span></div>
+		<div class="console spacer">deno run --allow-net ./server.<span class="ts">ts</span><span class="js">js</span></div>
 		<p>Open Browser On Local URL Screenshot</p>
 		<img src="img/screenshots/server.png" class="responsive-image" />
 	</div>
@@ -72,12 +72,12 @@ app.get('/', (req) => {
 			<div class="code-header">
 				<div class="code-title pull-left">blank.<span class="ts">ts</span><span class="js">js</span></div>
 				<div class="code-buttons pull-right">
-					<button class="code-button button-code-copy js" data-selection="examples-code-docker">Copy</button>
+					<button class="code-button button-code-copy" data-selection="examples-code-docker">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
 			<div class="code-body">
-				<pre class="js"><code class="docker" id="examples-code-docker">
+				<pre><code class="docker" id="examples-code-docker">
 FROM denocode/server:1.0.0
 
 EXPOSE 8000  # Port.
@@ -96,7 +96,7 @@ CMD ["--allow-net", "server.ts"]
 				</code></pre>
 			</div>
 		</div>
-		<div class="console">docker build -t app . && docker run -it --init -p 8000:8000 app</div>
+		<div class="console spacer">docker build -t app . && docker run -it --init -p 8000:8000 app</div>
 	</div>
 </div>
 
@@ -167,7 +167,7 @@ for await (const req of serve(`:${port}`)) {
 				</code></pre>		
 			</div>
 		</div>
-		<div class="console">deno run --allow-net app.js</div>
+		<div class="console spacer">deno run --allow-net app.js</div>
 	</div>
 </div>
 
@@ -199,6 +199,6 @@ for await (const req of serve(`:${port}`)) {
 				</code></pre>		
 			</div>
 		</div>
-		<div class="console">deno run app.js</div>
+		<div class="console spacer">deno run app.js</div>
 	</div>
 </div>
