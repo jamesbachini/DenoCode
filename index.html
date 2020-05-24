@@ -25,10 +25,11 @@
 			<nav id="menu" class="menu mobile-hidden">
 				<img src="img/icons/close.svg" id="menu-close" class="toggle-menu desktop-hidden" />
 				<ul>
-					<li><a href="#">Start</a></li>
-					<li><a href="#">Examples</a></li>
-					<li><a href="#">Community</a></li>
-					<li><a href="https://github.com/denoland" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></li>
+					<li><a href="/?start=1">Start</a></li>
+					<li><a href="/?examples=1">Examples</a></li>
+					<li><a href="/?snippets=1">Snippets</a></li>
+					<li><a href="/?community=1">Community</a></li>
+					<li><a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>
@@ -78,34 +79,58 @@
 			<div class="container v-padding">
 				<div class="full-width text-center">
 					<h3>Example Code</h3>
-				</div>
-				<pre><code class="javascript">
+					<div class="code-container">
+						<div class="code-header">
+							<div class="code-title pull-left">Basic Server</div>
+							<div class="code-buttons pull-right">
+								<button class="code-button button-js">Javascript</button>
+								<button class="code-button button-ts">Typescript</button>
+								<button class="code-button button-code-copy js" data-selection="start-basic-server-js">Copy</button>
+								<button class="code-button button-code-copy ts" data-selection="start-basic-server-ts">Copy</button>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="code-body">
+							<pre class="js"><code class="javascript" id="start-basic-server-js">
 import { serve } from 'https://deno.land/std@v0.30.0/http/server.ts';
 
 const s = serve({ port: 80 });
 console.log('Listening on http://localhost:80/');
 
 for await (const req of s) {
-  req.respond({ body: 'Hello World!' });
+	req.respond({ body: 'Hello Javascript!' });
 }
-				</code></pre>
+							</code></pre>
+							<pre class="ts"><code class="typescript" id="start-basic-server-ts">
+import { serve } from 'https://deno.land/std@v0.30.0/http/server.ts';
+
+const s = serve({ port: 80 });
+console.log('Listening on http://localhost:80/');
+
+for await (const req of s) {
+	req.respond({ body: 'Hello Typescript!' });
+}
+							</code></pre>		
+						</div>
+					</div>
 				</div>
 			</div>
 			<hr class="light-grey">
-		</div>
 
-		<div class="full-width bkg-light-grey">
-			<div class="container v-padding">
-				<div class="full-width text-center">
-					<h3>Where next?</h3>
+			<div class="full-width bkg-light-grey">
+				<div class="container v-padding">
+					<div class="full-width text-center">
+						<h3>Where next?</h3>
+					</div>
+					<p class="where-next full-width text-center">
+						<a href="/start=1">Start</a> | <a href="/examples=1">Examples</a> | <a href="/snippets=1">Snippets</a> | <a href="/community=1">Community</a> | <a href="/errors=1">Errors</a>
+					</p>
+					<div class="spacer">&nbsp;</div>
 				</div>
-				Start
-				Examples
-				Community
+				<hr class="light-grey">
 			</div>
-			<hr class="light-grey">
-		</div>
 
+		</div>
 	</div>
 	<div class="footer">
 		<div class="container">
@@ -113,7 +138,7 @@ for await (const req of s) {
 				<a href="index.html?terms=1" target="_blank">Terms</a>
 				<a href="index.html?privacy=1" target="_blank">Privacy</a>
 			</div>
-			<div class="copyright">&copy; Copyright 2019 - <span id="_this-year"></span> <script>document.getElementById('_this-year').innerHTML = new Date().getFullYear();</script> All rights reserved.</div>
+			<div class="copyright">DenoCode and this website are open-source. Contribute <a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></div>
 		</div>
 	</div>
 	<div id="modal" class="hidden">

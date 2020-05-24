@@ -1,0 +1,161 @@
+<div class="full-width">
+	</div><div class="container">
+		<h2>How To Get Started With Deno</h2>
+		<p>In this section we will run through how to get started with Deno.</p>
+		<ul>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#environment">Coding Tools &amp; Environment</a></li>
+			<li><a href="#typescript">Typescript or Javascript</a></li>
+			<li><a href="#deployment">Deployment to Production</a></li>
+		</ul>
+		<hr class="light-grey">
+	</div>
+</div>
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="installation">Installation</h3>
+		<p>
+			Deno is easy to install and use via the command line. To get to a command line in windows click start icon in the bottom right then type "powershell". There should be an option to "Run as administrator" which may be required for installation. Once installed you can run a shell from any directory (folder) by right clicking in the directory and selecting "Open powershell here". On a Mac click command-space to start the spotlight search, type "Terminal", then just hit return or click on the terminal. If you are using Linux... you don't need me to explain how to open a terminal :)
+		</p>
+		<div>
+			<div>
+				<h4>Windows</h4>
+				<h5>Recommended</h5>
+				<div class="console">iwr https://deno.land/x/install/install.ps1 -useb | iex</div>
+				<h5>Alternative</h5>
+				<div class="console spacer">choco install deno</div>
+				<div class="console spacer">scoop install deno</div>
+				<div class="console spacer">brew install deno</div>
+				<div class="console spacer">brew install deno</div>
+			</div>
+			<div>
+				<h4>Mac</h4>
+				<h5>Recommended</h5>
+				<div class="console">curl -fsSL https://deno.land/x/install/install.sh | sh</div>
+				<h5>Alternative</h5>
+				<div class="console spacer">brew install deno</div>
+				<div class="console spacer">cargo install deno</div>
+			</div>
+			<div>
+				<h4>Linux</h4>
+				<h5>Recommended</h5>
+				<div class="console">curl -fsSL https://deno.land/x/install/install.sh | sh</div>
+				<h5>Alternative</h5>
+				<div class="console spacer">brew install deno</div>
+				<div class="console spacer">cargo install deno</div>
+				<div class="console spacer">apt install deno</div>
+				<div class="console spacer">wget https://deno.land/x/install/install.sh; ./install.sh</div>				
+			</div>
+		</div>
+	</div>
+</div>
+<div class="full-width">
+	<div class="container v-padding">
+		<h3 id="environment">Coding Tools &amp; Environment</h3>
+		<p>Let's set up a development environment for writing code in Deno</p>
+		<p>In this example we are going to be looking at the most popular editor VSCode however there are packages for most IDE's.</p>
+		<p>VSCode (Visual Studio Code) can be downloaded for Windows, Mac &amp; Linux here: <a href="https://code.visualstudio.com/download" target="_blank">https://code.visualstudio.com/download</a></p>
+		<p>Once installed you can install the "vscode_deno" extension by click top menu > view > extensions</p>
+		<p>There are a number of Deno packages with the most popular currently being the one published by justjavavc</p>
+		<img src="img/screenshots/vscode.png" class="responsive-image" />
+		<p>Now let's go ahead and create a microservice using deno</p>
+		<p>Create a new file in VSCode with Top Menu > File > New File, then copy and paste this code into the file and save it somewhere.</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">Basic Server</div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-code-copy js" data-selection="start-basic-server-js">Copy</button>
+					<button class="code-button button-code-copy ts" data-selection="start-basic-server-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="start-basic-server-js">
+import { serve } from 'https://deno.land/std@v0.30.0/http/server.ts';
+
+const s = serve({ port: 80 });
+console.log('Listening on http://localhost:80/');
+
+for await (const req of s) {
+	req.respond({ body: 'Hello Javascript!' });
+}
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="start-basic-server-ts">
+import { serve } from 'https://deno.land/std@v0.30.0/http/server.ts';
+
+const s = serve({ port: 80 });
+console.log('Listening on http://localhost:80/');
+
+for await (const req of s) {
+	req.respond({ body: 'Hello Typescript!' });
+}
+				</code></pre>		
+			</div>
+		</div>
+
+		<p>Then open up a console or powershell window and navigate to the directory where the saved file is. Run this command:</p>
+		<div class="console">deno run --A ./myserver.<span class="ts">ts</span><span class="js">js</span></div>
+	</div>
+</div>
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="typescript">Typescript or Javascript</h3>
+		<p>
+			If you are already familiar with and using Typescript then you can skip this section as I'm going to spend most of it trying to explain what all the fuss is about and the benefits of using Typescript over Javascript for server-side code.
+		</p>
+		<p>
+			In 1995 a developer called Brandan Eich built Javascript in 10 days. The scripting language has evolved to become much more than just client-side code and is now used everywhere. If you are going to learn one coding language or are just getting started with development; learn javascript. There is no other coding language on the planet that can be used for so many things such as:
+		</p>
+		<ul>
+			<li>Client-side code run in a web browser</li>
+			<li>Server-side code run in <span class="line-through">Node</span> Deno</li>
+			<li>Mobile App development with Cordova</li>
+			<li>Desktop App development with Electron</li>
+		</ul>
+		<p>If you aren't familiar with JS or TS then Javascript is probably worth learning first. However if you are an experienced Javascript developer or you are confident in your coding abilities then Typescript is... better, at least for server-side code</p>
+		<h4>Benefits of Typescript</h4>
+		<ul>
+			<li>You'll find more bugs in development and less in production with Typescript</li>
+			<li>Typescript is strongly typed causing less weird bugs (0 !== false)</li>
+			<li>A lot of the Deno modules are written in Typescript</li>
+			<li>Typescript is to Javascript what Deno is to Node</li>
+			<li>Typescript feels less amateur hour and not as quirky for C++/Java Developers</li>
+			<li>Typescript is not a 25 year old beast that evolved from a 10 day coding project</li>
+			<li>All the latest ES6 features are available in Typescript</li>
+			<li>Typescript is growing, in 5 years time you'll probably have to use it any way</li>
+		</ul>
+		<p>
+			Underneath the hood Typescript compiles down to Javascript and just provides a layer on top with additional features to make it more robust. It's an already popular language and still growing. In 2020 there is a big enough community to copy and paste off stackoverflow just fine.
+		</p>
+		<p>
+			Not convinced? Give it a go for two weeks and you wont go back. Your future self will thank me by linking to this page to help others and laugh at the nights spent panicking because the production servers picked up some weird type bug that only manifests itself when there's thousands of users online.
+		</p>
+	</div>
+</div>
+<div class="full-width">
+	<div class="container v-padding">
+		<h3 id="deployment">Deployment To Production Server</h3>
+		<p>Deno is secure by standard which means when we run code we need to give permissions</p>
+		<div class="console">deno run --allow-net ./myserver.ts</div>
+		<ul>
+			<li>--allow-net unlocks network access</li>
+			<li>--allow-read unlocks read access to the local file system</li>
+			<li>--allow-write enables writing data to the file system, saving files etc.</li>
+			<li>--allow-env unlocks environmental variables access </li>
+			<li>--allow-plugin enables loading plugins</li>
+			<li>--allow-hrtime Allow high res time measurement</li>
+			<li>--allow-run Allow spawning sub-processes</li>
+			<li>--A Allow all permissions</li>
+		</ul>
+		<p>If you are running a server/daemon you may be used to using forever/pm2 with Node.js. We can't use forever but PM2 can be used with external scripts so we can just use that. First we create a shell file (assumes linux server) and save it as shellscript.sh</p>
+		<pre><code class="shell">
+#!/bin/bash
+deno run --allow-net myserver.ts
+		</code></pre>
+		<div class="console spacer">sudo npm install -g pm2</div>
+		<div class="console spacer">pm2 start ./shellscript.sh	</div>
+
+	</div>
+</div>
