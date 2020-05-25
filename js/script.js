@@ -125,14 +125,16 @@ const start = () => {
 		}
 	});
 
-	document.getElementById('button-module-search').onclick = () => {
-		const q = document.getElementById('input-module-search').value;
-		loadModules(q);
+	if (document.getElementById('button-module-search')) {
+		document.getElementById('button-module-search').onclick = () => {
+			const q = document.getElementById('input-module-search').value;
+			loadModules(q);
+		}
+		document.getElementById('input-module-search').onkeyup = (e) => {
+			loadModules(document.getElementById('input-module-search').value);
+		}
 	}
-	document.getElementById('input-module-search').onkeyup = (e) => {
-		loadModules(document.getElementById('input-module-search').value);
-	}
-
+	
 	if (localStorage.lang) {
 		switchLanguage(localStorage.lang);
 	} else {
