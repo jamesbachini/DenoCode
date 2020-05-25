@@ -12,6 +12,7 @@
 			<li><a href="#server">Basic Server</a></li>
 			<li><a href="#docker">Docker</a></li>
 			<li><a href="#websockets">Websockets</a></li>
+			<li><a href="#tests">Tests</a></li>
 			<li><a href="#blank">Blank Sample</a></li>
 		</ul>
 		<hr class="light-grey">
@@ -168,6 +169,58 @@ for await (const req of serve(`:${port}`)) {
 			</div>
 		</div>
 		<div class="console spacer">deno run --allow-net app.js</div>
+	</div>
+</div>
+
+<div class="full-width">
+	<div class="container v-padding">
+		<h3 id="tests">Tests in Deno</h3>
+		<p>
+			An example of testing in Deno synchronous and asynchronous code.
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">tests.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-copy js" data-selection="examples-code-tests-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="examples-code-tests-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="examples-code-tests-js">
+import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+
+Deno.test('Test Example Sync', () => {
+  const a = 2 + 2;
+  assertEquals(a, 4);
+});
+
+Deno.test('Test Example Async', async () => {
+  const a = 2 + 2;
+  await new Promise(r => setTimeout(r, 2000)); 
+  if (a !== 4) throw Error('Late night required');
+});
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="examples-code-tests-ts">
+import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
+
+Deno.test('Test Example Sync', () => {
+  const a : number = 2 + 2;
+  assertEquals(a, 4);
+});
+
+Deno.test('Test Example Async', async () => {
+  const a : number = 2 + 2;
+  await new Promise(r => setTimeout(r, 2000)); 
+  if (a !== 4) throw Error('Late night required');
+});
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console spacer">deno run tests.js</div>
 	</div>
 </div>
 
