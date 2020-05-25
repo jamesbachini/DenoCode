@@ -15,6 +15,7 @@
 			<li><a href="#imports">Local Imports</a></li>
 			<li><a href="#scrape">Website Scraper</a></li>
 			<li><a href="#scrape">Async/Await</a></li>
+			<li><a href="#crypto">SHA256 Crypto Hashing</a></li>
 			<li><a href="#blank">Blank Sample</a></li>
 		</ul>
 		<hr class="light-grey">
@@ -33,8 +34,8 @@
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-maths-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-maths-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-maths-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-maths-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -96,8 +97,8 @@ console.log(c);
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-files-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-files-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-files-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-files-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -138,8 +139,8 @@ console.log('Wrote to output.txt');
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-args-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-args-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-args-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-args-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -176,8 +177,8 @@ for (let i:number = 0; i < Deno.args.length; i++) {
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-module-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-module-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-module-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-module-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -201,8 +202,8 @@ export function myFunc (subject: string) {
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-import-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-import-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-import-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-import-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -234,8 +235,8 @@ myFunc('Hello Modules');
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-scrape-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-scrape-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-scrape-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-scrape-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -273,8 +274,8 @@ fetch('https://denocode.com/').then(async (response) => {
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-async-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-async-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-async-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-async-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -296,6 +297,41 @@ console.log('boo!');
 	</div>
 </div>
 
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="crypto">SHA256 Crypto Hashing</h3>
+		<p>
+			A SHA256 Hashing function example
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">crypto.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-crypto-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-crypto-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-crypto-js">
+import { Sha256 } from "https://deno.land/std/hash/sha256.ts";
+const data = 'test';
+const hash = new Sha256().update(data).hex();
+console.log(hash);
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-crypto-ts">
+import { Sha256 } from "https://deno.land/std/hash/sha256.ts";
+const data : string = 'test';
+const hash : string = new Sha256().update(data).hex();
+console.log(hash);
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console spacer">deno run crypto.js</div>
+	</div>
+</div>
 
 
 <!-- Leave One Example Below This Line -->
@@ -311,8 +347,8 @@ console.log('boo!');
 				<div class="code-buttons pull-right">
 					<button class="code-button button-js">Javascript</button>
 					<button class="code-button button-ts">Typescript</button>
-					<button class="code-button button-code-copy js" data-selection="snippet-code-blank-js">Copy</button>
-					<button class="code-button button-code-copy ts" data-selection="snippet-code-blank-ts">Copy</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-blank-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-blank-ts">Copy</button>
 				</div>
 				<div class="clear"></div>
 			</div>

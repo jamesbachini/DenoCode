@@ -110,6 +110,10 @@ button {
 .blue {
 	color: #bdbfc3;
 }
+.bkg-navy {
+	background: #2b2d42;
+	color: #EEE;
+}
 .filter-navy {
 	filter: invert(13%) sepia(29%) saturate(765%) hue-rotate(197deg) brightness(98%) contrast(88%);
 }
@@ -245,6 +249,12 @@ table tr:nth-child(even) {
 	text-decoration: none;
 }
 
+.input-field {
+	border: 1px solid #212229;
+	border-radius: 5px;
+	padding: 3px 5px;
+	width: 150px;
+}
 
 #modal {
 	position: absolute;
@@ -289,9 +299,19 @@ table tr:nth-child(even) {
 	border: 1px solid #b4303b;
 }
 
+.small-print {
+	font-size: 0.6em;
+}
+
 .small-icon {
 	height: 17px;
-	margin-bottom: -4px;
+	margin-bottom: -2px;
+}
+
+.button-icon {
+	height: 17px;
+	margin-bottom: -2px;
+	color: #2b2d42;
 }
 
 .medium-icon {
@@ -335,7 +355,7 @@ table tr:nth-child(even) {
 .benefits {
 	width: 80%;
 	margin-left: 10%;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 .benefits-italic {
 	width: 100%;
@@ -400,6 +420,37 @@ table tr:nth-child(even) {
 	text-decoration: none;
 	font-weight: 900;
 } 
+
+#modules-container {
+	align-items: flex-start;
+}
+.module-box {
+	border: 3px solid #2b2d42;
+	border-radius: 10px;
+	padding: 0px;
+	flex-basis: 150px;
+	margin: 2px;
+}
+.module-header {
+	padding: 2px 5px;
+}
+.module-description {
+	font-size: 0.7em;
+}
+.module-body {
+	padding: 5px;
+}
+.module-include {
+	font-size: 0.4em;
+}
+.button-module {
+	border-radius: 15px;
+	padding: 2px 10px;
+	font-size: 0.6em;
+}
+.module-buttons {
+	margin-top: 3px;
+}
 
 @media only screen and (max-width: 720px) {
 	.desktop-hidden {

@@ -61,6 +61,14 @@ export const utils = {
 		document.getElementById(elementID).innerHTML = responseText; 
 	},
 
+	loadJSON: async (url) => {
+		return new Promise(resolve => {
+			fetch(url)
+  		.then(response => response.json())
+  		.then(json => resolve(json));
+		});
+	},
+
 	placeCaretAtEnd: (el) => {
 		el.focus();
 		if (typeof window.getSelection != "undefined"
@@ -114,6 +122,12 @@ export const utils = {
 		document.getElementById('modal-close').onclick = () => {
 			document.getElementById('modal').classList.add('hidden');
 		};
+	},
+
+	camelize: (str) => {
+		return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+			return index === 0 ? word.toLowerCase() : word.toUpperCase();
+		}).replace(/\s+/g, '');
 	},
 
 };

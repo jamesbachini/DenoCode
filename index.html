@@ -18,7 +18,7 @@
 <body>
 	<div class="top-bar">
 		<div class="container">
-			<a href="/">
+			<a href="index.html">
 				<img src="img/icons/icon.svg" class="logo-icon" />
 				<div class="logo-text">DenoCode</div>
 			</a>
@@ -29,6 +29,7 @@
 					<li><a href="index.html?start=1">Start</a></li>
 					<li><a href="index.html?examples=1">Examples</a></li>
 					<li><a href="index.html?snippets=1">Snippets</a></li>
+					<li><a href="index.html?modules=1">Modules</a></li>
 					<li><a href="index.html?community=1">Community</a></li>
 					<li><a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></li>
 				</ul>
@@ -41,7 +42,7 @@
 		<div class="full-width bkg-grey">
 			<div class="container text-center jumbotron">
 				<div class="jumbo-title"><img src="img/icons/deno.svg" class="jumbo-icon" /> Deno</div>
-				<p class="jumbo-tag">A <span class="vbold">secure</span> runtime for <span class="vbold">JavaScript</span> and <span class="vbold">TypeScript</span>.</p>
+				<p class="jumbo-tag"><span class="vbold">Server-side</span> code for <span class="vbold">JavaScript</span> and <span class="vbold">TypeScript</span>.</p>
 			</div>
 			<hr class="light-grey">
 		</div>
@@ -49,10 +50,10 @@
 		<div class="full-width">
 			<div class="container">
 				<div class="benefits">
-					<p><span class="vbold">Deno is better!</span> Modern Runtime For Javascript &amp; Typescript</p>
-					<p><span class="vbold">Deno is fast!</span> Combining the JS V8 engine with Rust</p>
-					<p><span class="vbold">Deno is secure!</span> Restrict file, network and environment by default</p>
-					<p><span class="vbold">Deno is lightweight!</span> Single executable, fixes node_modules bloat</p>
+					<p><span class="vbold">🦕 Deno is better!</span> Improved alternative to Node.js</p>
+					<p><span class="vbold">⚡ Deno is fast!</span> Combining the JS V8 engine with Rust</p>
+					<p><span class="vbold">🔒 Deno is secure!</span> Restrict file, network and environment by default</p>
+					<p><span class="vbold">💃 Deno is lightweight!</span> Single executable, fixes node_modules bloat</p>
 					<div class="benefits-italic">const deno = 'node'.split('').sort().join('');</div>
 				</div>
 			</div>
@@ -86,8 +87,8 @@
 							<div class="code-buttons pull-right">
 								<button class="code-button button-js">Javascript</button>
 								<button class="code-button button-ts">Typescript</button>
-								<button class="code-button button-code-copy js" data-selection="start-basic-server-js">Copy</button>
-								<button class="code-button button-code-copy ts" data-selection="start-basic-server-ts">Copy</button>
+								<button class="code-button button-copy js" data-selection="start-basic-server-js">Copy</button>
+								<button class="code-button button-copy ts" data-selection="start-basic-server-ts">Copy</button>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -125,24 +126,39 @@ for await (const req of s) {
 					</div>
 					<div class="flex-row flex-wrap">
 						<div class="flex-1 where-next-box">
-							<img src="img/icons/laptop-code.svg" class="where-next-icon" />
-							<br>
-							<a href="/index.html?start=1">Start</a>
+							<a href="index.html?start=1">
+								<img src="img/icons/laptop-code.svg" class="where-next-icon" />
+								<br>
+								Start
+							</a>
 						</div>
 						<div class="flex-1 where-next-box">
-							<img src="img/icons/window-restore.svg" class="where-next-icon" />
-							<br>
-							<a href="/index.html?examples=1">Examples</a>
+							<a href="index.html?examples=1">
+								<img src="img/icons/window-restore.svg" class="where-next-icon" />
+								<br>
+								Examples
+							</a>
 						</div>
 						<div class="flex-1 where-next-box">
-							<img src="img/icons/file-code.svg" class="where-next-icon" />
-							<br>
-							<a href="/index.html?snippets=1">Snippets</a>
+							<a href="index.html?snippets=1">
+								<img src="img/icons/file-code.svg" class="where-next-icon" />
+								<br>
+								Snippets
+							</a>
 						</div>
 						<div class="flex-1 where-next-box">
-							<img src="img/icons/users.svg" class="where-next-icon" />
-							<br>
-							<a href="/index.html?community=1">Community</a>
+							<a href="index.html?modules=1">
+								<img src="img/icons/rocket.svg" class="where-next-icon" />
+								<br>
+								Modules
+							</a>
+						</div>
+						<div class="flex-1 where-next-box">
+							<a href="index.html?community=1">
+								<img src="img/icons/users.svg" class="where-next-icon" />
+								<br>
+								Community
+							</a>
 						</div>
 					</div>
 					
