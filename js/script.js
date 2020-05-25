@@ -2,7 +2,7 @@ import { utils } from './utils.js';
 
 utils.init();
 
-const brand = 'Project Name';
+const brand = 'DenoCode';
 
 const loadModules = async (filter=false) => {
 	const modules = await utils.loadJSON('modules.json');
