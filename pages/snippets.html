@@ -13,9 +13,10 @@
 			<li><a href="#files">Read/Write Files</a></li>
 			<li><a href="#args">Command Line Arguments</a></li>
 			<li><a href="#imports">Local Imports</a></li>
-			<li><a href="#scrape">Website Scraper</a></li>
-			<li><a href="#scrape">Async/Await</a></li>
+			<li><a href="#scrape">Website Scraper With Fetch</a></li>
+			<li><a href="#async">Async/Await</a></li>
 			<li><a href="#crypto">SHA256 Crypto Hashing</a></li>
+			<li><a href="#subprocess">Spawn a Sub-process</a></li>
 			<li><a href="#blank">Blank Sample</a></li>
 		</ul>
 		<hr class="light-grey">
@@ -225,7 +226,7 @@ myFunc('Hello Modules');
 
 <div class="full-width bkg-light-grey">
 	<div class="container v-padding">
-		<h3 id="scrape">Scrape website content</h3>
+		<h3 id="scrape">Scrape website content with Fetch</h3>
 		<p>
 			A simple scraper based on fetch API which is core in Deno
 		</p>
@@ -329,7 +330,41 @@ console.log(hash);
 				</code></pre>		
 			</div>
 		</div>
-		<div class="console spacer">deno run crypto.js</div>
+		<div class="console spacer">deno run crypto.<span class="ts">ts</span><span class="js">js</span></div>
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<h3 id="subprocess">Spawn a Sub-process</h3>
+		<p>
+			Spawn a sub-process and run command line tools from Deno.
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">subprocess.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-subprocess-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-subprocess-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-subprocess-js">
+const p = Deno.run({
+  cmd: ['echo', 'This is running from shell'],
+});
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-subprocess-ts">
+const p = Deno.run({
+  cmd: ['echo', 'This is running from shell'],
+});
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console spacer">deno run subprocess.<span class="ts">ts</span><span class="js">js</span></div>
 	</div>
 </div>
 
@@ -361,7 +396,7 @@ console.log(hash);
 				</code></pre>		
 			</div>
 		</div>
-		<div class="console spacer">deno run app.js</div>
+		<div class="console spacer">deno run app.<span class="ts">ts</span><span class="js">js</span></div>
 	</div>
 </div>
 
