@@ -21,7 +21,7 @@ const loadModules = async (filter=false) => {
 		let buttons = `<button class="button-open-link button-module" data-selection="https://github.com/${m.owner}/${m.repo}/">📄 README</button> `;
 		if (m.url && m.url !== 'unknown') buttons += `<button class="button-copy button-module" data-selection="module-import-${m.repo}">🔗 COPY</button>`;
 		html += `<div class="flex-1 module-box">
-        <div class="module-header bkg-navy">
+        <div class="module-header bkg-navy text-center">
           <div class="module-title">${m.repo}</div>
 					<div class="small-print grey"> by ${m.owner}</div>
         </div>
@@ -134,7 +134,7 @@ const start = () => {
 			loadModules(document.getElementById('input-module-search').value);
 		}
 	}
-	
+
 	if (localStorage.lang) {
 		switchLanguage(localStorage.lang);
 	} else {
