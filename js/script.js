@@ -18,7 +18,7 @@ const loadModules = async (filter=false) => {
 		const variableName = utils.camelize(m.repo.split('-').join(' ').split('_').join(''));
 		let importCode = 'import url unknown';
 		if (m.url && m.url !== 'unknown') importCode = `import { ${variableName} } from '${m.url}';`
-		let buttons = `<button class="button-open-link button-module" data-selection="https://github.com/${m.owner}/${m.repo}/">📄 README</button> `;
+		let buttons = `<button class="button-open-link button-module" data-selection="https://github.com/${m.owner}/${m.repo}/#readme">📄 README</button> `;
 		if (m.url && m.url !== 'unknown') buttons += `<button class="button-copy button-module" data-selection="module-import-${m.repo}">🔗 COPY</button>`;
 		html += `<div class="flex-1 module-box">
         <div class="module-header bkg-navy text-center">
