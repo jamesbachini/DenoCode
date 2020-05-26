@@ -1,3 +1,3 @@
 const p = Deno.run({
-  cmd: ["cat", "test.ts"],
+  cmd: ['echo', 'This is running from shell'],
 });
