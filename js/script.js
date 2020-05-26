@@ -7,9 +7,22 @@ const brand = 'DenoCode';
 const loadModules = async (filter=false) => {
 	const modules = await utils.loadJSON('modules.json');
 	let html = '';
+	const sortable = [];
 	Object.keys(modules).forEach((title) => {
-		const m = modules[title];
+		sortable.push(modules[title]);
+	});
+	sortable.sort(function(a, b) {
+		return a.stars - b.stars;
+	}).reverse();
+	sortable.forEach((m) => {
 		if (m.type !== 'github') return false; // 2do add support for npm
+		if (m.repo === 'typescript' || m.repo === 'deno') return false;
+		if (m.repo === 'lodash') m.url = 'https://deno.land/x/lodash/index.js';
+		if (m.repo === 'date-fns') m.url = 'https://deno.land/x/date_fns/index.js';
+		if (m.repo === 'omelette') m.url = 'https://deno.land/x/omelette/omelette.ts';
+		if (m.repo === 'alosaur') m.url = 'https://deno.land/x/alosaur/src/mod.ts';
+		if (m.repo === 'pogo') m.url = 'https://deno.land/x/pogo/main.ts';
+
 		if (filter) {
 			const filterLC = filter.toLowerCase();
 			const searchString = `${m.repo} ${m.owner} ${m.desc}`.toLowerCase();
@@ -21,15 +34,39 @@ const loadModules = async (filter=false) => {
 		let buttons = `<button class="button-open-link button-module" data-selection="https://github.com/${m.owner}/${m.repo}/#readme">📄 README</button> `;
 		if (m.url && m.url !== 'unknown') buttons += `<button class="button-copy button-module" data-selection="module-import-${m.repo}">🔗 COPY</button>`;
 		html += `<div class="flex-1 module-box">
-        <div class="module-header bkg-navy text-center">
-          <div class="module-title">${m.repo}</div>
-					<div class="small-print grey"> by ${m.owner}</div>
+        <div class="module-header bkg-navy text-center flex-row">
+					<div class="flex-3">
+						<div class="module-title" title="Repository: ${m.repo}">${m.repo}</div>
+						<div class="small-print grey"> by ${m.owner}</div>
+					</div>
+					<div class="flex-1 text-center">
+						<div title="Github Stars">⭐</div>
+						<div title="Github Stars" class="module-stars small-print">${m.stars}</div>
+					</div>
+					<div class="flex-1 text-center">
+						<div title="Github Issues">⚠️</div>
+						<div title="Github Issues" class="module-stars small-print">${m.issues}</div>
+					</div>
         </div>
         <div class="module-body">
-          <div class="module-description">${m.desc}</div>
-          <div class="module-include grey" id="module-import-${m.repo}">${importCode}</div>
-          <div class="module-buttons">
-            ${buttons}
+					<div class="flex-row">
+						<div class="flex-1">
+							<img src="${m.thumbnail}" alt="${m.repo} ${m.repo}" class="module-thumb" />
+						</div>
+						<div class="flex-3">
+							<div class="module-description">${m.desc}</div>
+							<div class="module-stats flex-column small-print">
+								<div class="flex-1 grey" title="License: ${m.license}">License: ${m.licenseShort}</div>
+								<div class="flex-1 grey">Size: ${m.size}</div>
+								<div class="flex-1 grey">Language: ${m.language}</div>
+								<div class="flex-1 grey">Created: ${m.created.split('T')[0]}</div>
+								<div class="flex-1 grey">Updated: ${m.updated.split('T')[0]}</div>
+							</div>
+						</div>
+					</div>
+					<div class="module-include spacer full-width text-center" id="module-import-${m.repo}">${importCode}</div>
+					<div class="module-buttons">
+						${buttons}
 					</div>
         </div>
       </div>`;
