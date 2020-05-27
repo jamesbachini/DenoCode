@@ -1,0 +1,68 @@
+<div class="full-width bkg-grey">
+	<div class="container text-center jumbotron">
+		<p class="jumbo-tag">Deno vs Node</p>
+	</div>
+	<hr class="light-grey">
+</div>
+
+<div class="full-width">
+	</div><div class="container">
+		<p>Deno is a modern, fast, secure, run time. Node has npm</p>
+		<hr class="light-grey">
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<p>
+			Before we get in to performance benchmarks lets look at what Deno improves upon and some of it's shortcommings.
+		</p>
+		<div class="pros-and-cons">
+			✔️ Deno is fast (see benchmarks)<br>
+			✔️ Deno is secure limiting access to outside environment as standard<br>
+			✔️ Deno is lightweight, fixes node_modules bloat<br>
+			✔️ Deno is decentralized, no central package manager<br>
+			✔️ Deno Async functionality is great<br>
+			✔️ Deno has more focus on Typescript<br>
+			✔️ Deno feels up-to-date with less compromises<br>
+			❌ Deno community is growing but perhaps only 1% currently of Node.js<br>
+			❌ Less code to copy off stackoverflow<br>
+			❌ No package manager like npm<br>
+			❌ Less modules and libraries compared to npm<br>
+			❌ Developing fast, inevitably some bugs<br>
+		</div>
+		<p>
+			Ultimately you can do with Deno what you can do with Node. If you want to build server-side code with Javascript or Typescript then both will do the job. Node.js isn't going anywhere, it's hugely popular and that isn't going to change overnight. While Deno does offer some improvements the majority of developers will take some time to start using Deno as default.
+		</p>
+	</div>
+</div>
+
+<div class="full-width">
+	<div class="container v-padding">
+		<h2>Deno vs Node Benchmarks</h2>
+		<p>
+			The most popular use case for Node and Deno is making backend services such as REST API's. Let's look at http performance.
+		</p>
+		<h4>HTTP Latency</h4>
+		<img src="img/http-latency" alt="Deno Benchmark HTTP Latency" class="responsive-image" />
+		<p>
+			Maximum latency test. Smaller is better. Log scale.
+		</p>
+			<h4>HTTP Throughput</h4>
+		<img src="img/http-throughput" alt="Deno Benchmark HTTP Throughput" class="responsive-image" />
+		<p>
+			"Hello world" http server benchmark test with 10 keep-alive connections. Bigger is better. Percentage compared to Hyper (Rust server)
+		</p>
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<p>
+			So which should I choose for my next project Deno or Node.js?
+		</p>
+		<p>
+			This ultimately comes down to how much work you'll be doing with external modules and libraries. If you are writing something that mashes together different 3rd party services then Node.js is the obvious choice. If you are writing something where you only need basic module support and that is available via the <a href="https://denocode.com/?page=modules">Deno Modules Directory</a> then Deno would be the obvious choice.
+		</p>
+	</div>
+</div>

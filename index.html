@@ -9,7 +9,7 @@
 	<link href="css/vscode.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/icons/icon.png">
-	<title>DenoCode | Deno JS Runtime</title>
+	<title>DenoCode | Deno Developer Site</title>
 	<meta name="description" content="Deno is an updated Javascript runtime developed by the creator of Node.js">
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
@@ -59,7 +59,7 @@
 <body>
 	<div class="top-bar">
 		<div class="container">
-			<a href="index.html">
+			<a href="/">
 				<img src="img/icons/icon.svg" class="logo-icon" />
 				<div class="logo-text">DenoCode</div>
 			</a>
@@ -67,11 +67,11 @@
 			<nav id="menu" class="menu mobile-hidden">
 				<img src="img/icons/close.svg" id="menu-close" class="toggle-menu desktop-hidden" />
 				<ul>
-					<li><a href="index.html?start=1">Start</a></li>
-					<li><a href="index.html?examples=1">Examples</a></li>
-					<li><a href="index.html?snippets=1">Snippets</a></li>
-					<li><a href="index.html?modules=1">Modules</a></li>
-					<li><a href="index.html?community=1">Community</a></li>
+					<li><a href="/?page=start">Start</a></li>
+					<li><a href="/?page=examples">Examples</a></li>
+					<li><a href="/?page=snippets">Snippets</a></li>
+					<li><a href="/?page=modules">Modules</a></li>
+					<li><a href="/?page=community">Community</a></li>
 					<li><a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></li>
 				</ul>
 			</nav>
@@ -115,7 +115,7 @@
 				<p>Test & show off remote URL executions:</p>
 				<div class="console">deno run https://deno.land/std/examples/welcome.ts</div>
 				<div class="full-width text-center spacer">
-					<a href="index.html?start=1">More detailed instructions on Deno installation here</a>
+					<a href="/?page=start">More detailed instructions on Deno installation here</a>
 				</div>
 			</div>
 			<hr class="light-grey">
@@ -173,35 +173,49 @@ for await (const req of s) {
 			</div>
 			<div class="flex-row flex-wrap">
 				<div class="flex-1 where-next-box">
-					<a href="index.html?start=1">
+					<a href="/?page=start">
 						<img src="img/icons/laptop-code.svg" class="where-next-icon" />
 						<br>
 						Start
 					</a>
 				</div>
 				<div class="flex-1 where-next-box">
-					<a href="index.html?examples=1">
+					<a href="/?page=examples">
 						<img src="img/icons/window-restore.svg" class="where-next-icon" />
 						<br>
 						Examples
 					</a>
 				</div>
 				<div class="flex-1 where-next-box">
-					<a href="index.html?snippets=1">
+					<a href="/?page=snippets">
 						<img src="img/icons/file-code.svg" class="where-next-icon" />
 						<br>
 						Snippets
 					</a>
 				</div>
 				<div class="flex-1 where-next-box">
-					<a href="index.html?modules=1">
+					<a href="/?page=modules">
 						<img src="img/icons/rocket.svg" class="where-next-icon" />
 						<br>
 						Modules
 					</a>
 				</div>
 				<div class="flex-1 where-next-box">
-					<a href="index.html?community=1">
+					<a href="/?page=errors">
+						<img src="img/icons/exclamation-triangle.svg" class="where-next-icon" />
+						<br>
+						Errors
+					</a>
+				</div>
+				<div class="flex-1 where-next-box">
+					<a href="/?page=deno-vs-node">
+						<img src="img/icons/fighter-jet.svg" class="where-next-icon" />
+						<br>
+						Deno vs Node
+					</a>
+				</div>
+				<div class="flex-1 where-next-box">
+					<a href="/?page=community">
 						<img src="img/icons/users.svg" class="where-next-icon" />
 						<br>
 						Community
@@ -217,8 +231,8 @@ for await (const req of s) {
 	<div class="footer">
 		<div class="container">
 			<div class="legal-container pull-left">
-				<a href="index.html?terms=1" target="_blank">Terms</a>
-				<a href="index.html?privacy=1" target="_blank">Privacy</a>
+				<a href="/?page=terms" target="_blank">Terms</a>
+				<a href="/?page=privacy" target="_blank">Privacy</a>
 			</div>
 			<div class="copyright">This website is open-source. Contribute <a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></div>
 		</div>

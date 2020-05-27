@@ -1,6 +1,8 @@
 https://denocode.com/
-https://denocode.com/index.html?start=1
-https://denocode.com/index.html?examples=1
-https://denocode.com/index.html?snippets=1
-https://denocode.com/index.html?modules=1
-https://denocode.com/index.html?community=1
+https://denocode.com/?page=start
+https://denocode.com/?page=examples
+https://denocode.com/?page=snippets
+https://denocode.com/?page=modules
+https://denocode.com/?page=community
+https://denocode.com/?page=errors
+https://denocode.com/?page=deno-vs-node

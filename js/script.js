@@ -75,37 +75,56 @@ const loadModules = async (filter=false) => {
 	start();
 }
 
+const addCanonical = (fullURL) => {
+	const c = document.createElement('link'); 
+	c.rel = 'canonical'; 
+	c.href = fullURL; 
+	document.head.appendChild(c);
+}
+
 const routes = () => {
-	if (utils.get.terms) utils.loadPage('pages/terms.html','content', (pageContent) => {
-		return pageContent.split('[brand]').join(brand);
-	});
-	if (utils.get.privacy) utils.loadPage('pages/privacy.html','content', (pageContent) => {
-		return pageContent.split('[brand]').join(brand);
-	});
-	if (utils.get.start) {
+	if (utils.get.page && utils.get.page === 'terms') {
+		utils.loadPage('pages/terms.html','content', (pageContent) => {
+			return pageContent.split('[brand]').join(brand);
+		});
+		addCanonical('https://denocode.com/?page=terms');
+	} else if (utils.get.page && utils.get.page === 'privacy') {
+		utils.loadPage('pages/privacy.html','content', (pageContent) => {
+			return pageContent.split('[brand]').join(brand);
+		});
+		addCanonical('https://denocode.com/?page=privacy');
+	} else if (utils.get.page && utils.get.page === 'start') {
 		utils.loadPage('pages/start.html','content');
 		document.title = 'How To Get Started With Deno';
-	}
-	if (utils.get.examples) {
+		addCanonical('https://denocode.com/?page=start');
+	} else if (utils.get.page && utils.get.page === 'examples') {
 		utils.loadPage('pages/examples.html','content');
 		document.title = 'Deno Example Code';
-	}
-	if (utils.get.snippets) {
+		addCanonical('https://denocode.com/?page=examples');
+	} else if (utils.get.page && utils.get.page === 'snippets') {
 		utils.loadPage('pages/snippets.html','content');
 		document.title = 'Deno Code Snippets';
-	}
-	if (utils.get.modules) {
+		addCanonical('https://denocode.com/?page=snippets');
+	} else if (utils.get.page && utils.get.page === 'modules') {
 		utils.loadPage('pages/modules.html','content');
 		document.title = 'Deno Modules, Packages &amp; Libraries';
 		loadModules();
-	}
-	if (utils.get.community) {
+		addCanonical('https://denocode.com/?page=modules');
+	} else if (utils.get.page && utils.get.page === 'community') {
 		utils.loadPage('pages/community.html','content');
 		document.title = 'Deno Community Websites';
-	}
-	if (utils.get.errors) {
+		addCanonical('https://denocode.com/?page=community');
+	} else if (utils.get.page && utils.get.page === 'errors') {
 		utils.loadPage('pages/errors.html','content');
 		document.title = 'Deno Error Codes &amp; Solutions';
+		addCanonical('https://denocode.com/?page=errors');
+	} else if (utils.get.page && utils.get.page === 'deno-vs-node') {
+		utils.loadPage('pages/deno-vs-node.html','content');
+		document.title = 'Deno vs Node.js | Comparison & Performance';
+		addCanonical('https://denocode.com/?page=deno-vs-node');
+	} else {
+		document.title = 'DenoCode | Deno Developer Site';
+		addCanonical('https://denocode.com/');
 	}
 };
 

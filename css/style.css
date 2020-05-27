@@ -376,6 +376,9 @@ table tr:nth-child(even) {
 	border-radius: 3px;
 	padding: 2px 4px;
 }
+.console-error {
+	color: #F44;
+}
 .margin-auto {
 	margin: auto;
 }

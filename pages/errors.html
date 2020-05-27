@@ -1,0 +1,43 @@
+<div class="full-width bkg-grey">
+	<div class="container text-center jumbotron">
+		<p class="jumbo-tag">Deno <span class="vbold">Errors</span> &amp; Common Issues</p>
+	</div>
+	<hr class="light-grey">
+</div>
+
+<div class="full-width">
+	</div><div class="container">
+		<p>In this section we'll be looking at how to fix common issues and error codes when working with Deno.</p>
+		<hr class="light-grey">
+	</div>
+</div>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+    <div class="console console-error spacer">thread 'main' has overflowed its stack</div>
+		<p>
+			This is a memory management error that shouldn't happen. It's a bug most likely in one of the module in the developers code. Best thing to do here is isolate which module is causing the issue and raise a issue on their Github repository. You can find the repositry by clicking the Readme link in the <a href="https://denocode.com/?page=modules">Deno Modules Directory</a>
+		</p>
+	</div>
+</div>
+
+<div class="full-width">
+	<div class="container v-padding">
+    <div class="console console-error spacer">error: Uncaught ReferenceError: x is not defined</div>
+		<p>
+			This issue indicates that a value is not defined. In the example above x is not a defined value. Likely a bug in the code prior to that area of execution.
+		</p>
+	</div>
+</div>
+
+<div class="full-width">
+	<div class="container v-padding">
+    <div class="console console-error spacer">Uncaught TypeError: Cannot resolve extension for ... .json</div>
+		<p>
+			There's an issue with importing JSON files directly. Try this code instead:
+    </p>
+    <pre class="js"><code class="javascript">const myObj = JSON.parse(Deno.readTextFileSync('./whatever.json'));</code></pre>
+	</div>
+</div>
+
+		
