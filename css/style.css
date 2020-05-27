@@ -419,7 +419,7 @@ table tr:nth-child(even) {
 	margin: 5px;
 }
 
-.where-next-box a, .where-next-box a:visited, .where-next-box a:active, .where-next-box a:hover {
+.where-next-container a, .where-next-container a:visited, .where-next-container a:active, .where-next-container a:hover {
 	color: #2b2d42;
 	font-size: 1.4em;
 	text-decoration: none;
