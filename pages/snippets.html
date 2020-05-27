@@ -1,6 +1,6 @@
 <div class="full-width bkg-grey">
 	<div class="container text-center jumbotron">
-		<p class="jumbo-tag">Deno <span class="vbold">Code Snippets</span></p>
+		<p class="jumbo-tag">Deno <span class="vbold">Errors</span> &amp; Common Issues</p>
 	</div>
 	<hr class="light-grey">
 </div>
@@ -288,7 +288,7 @@ console.log('boo!');
 				</code></pre>
 				<pre class="ts"><code class="typescript" id="snippet-code-async-ts">
 console.log('Wait for it...');
-const timer : number = 2000;
+const timer = 2000;
 await new Promise(r => setTimeout(r, timer));
 console.log('boo!');
 				</code></pre>		
@@ -324,8 +324,8 @@ console.log(hash);
 				</code></pre>
 				<pre class="ts"><code class="typescript" id="snippet-code-crypto-ts">
 import { Sha256 } from "https://deno.land/std/hash/sha256.ts";
-const data : string = 'test';
-const hash : string = new Sha256().update(data).hex();
+const data = 'test';
+const hash = new Sha256().update(data).hex();
 console.log(hash);
 				</code></pre>		
 			</div>
