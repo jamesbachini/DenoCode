@@ -50,15 +50,15 @@ export const utils = {
 		return (Math.random().toString(36).substring(7) + Math.random().toString(36).substring(7) + Math.random().toString(36).substring(7));
 	},
 
-	loadPage: (url, elementID, modifierFunc=false) => {
-		const req = new XMLHttpRequest();
-		req.open("GET", url, false);
-		req.send(null);
-		let responseText = req.responseText;
-		if (modifierFunc) {
-			responseText = modifierFunc(responseText);
-		}
-		document.getElementById(elementID).innerHTML = responseText; 
+	loadPage: async (url, elementID, modifierFunc=false) => {
+		await fetch(url)
+		.then(response => response.text())
+		.then((responseText) => {
+			if (modifierFunc) {
+				responseText = modifierFunc(responseText);
+			}
+			document.getElementById(elementID).innerHTML = responseText; 
+		});
 	},
 
 	loadJSON: async (url) => {
