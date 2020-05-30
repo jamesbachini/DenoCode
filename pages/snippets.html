@@ -17,6 +17,7 @@
 			<li><a href="#async">Async/Await</a></li>
 			<li><a href="#crypto">SHA256 Crypto Hashing</a></li>
 			<li><a href="#subprocess">Spawn a Sub-process</a></li>
+			<li><a href="#npm">Import from npm</a></li>
 			<li><a href="#blank">Blank Sample</a></li>
 		</ul>
 		<hr class="light-grey">
@@ -372,6 +373,46 @@ const p = Deno.run({
 <!-- Leave One Example Below This Line -->
 <div class="full-width bkg-light-grey">
 	<div class="container v-padding">
+		<h3 id="npm">Import from NPM</h3>
+		<p>
+			This is labeled as an experimental feature. Use with caution until it's stable.<br>
+			Use npm:[package] or for GitHub use gh:[owner]:[repo] make use of npm packages.
+		</p>
+		<div class="code-container">
+			<div class="code-header">
+				<div class="code-title pull-left">npm.<span class="ts">ts</span><span class="js">js</span></div>
+				<div class="code-buttons pull-right">
+					<button class="code-button button-js">Javascript</button>
+					<button class="code-button button-ts">Typescript</button>
+					<button class="code-button button-copy js" data-selection="snippet-code-npm-js">Copy</button>
+					<button class="code-button button-copy ts" data-selection="snippet-code-npm-ts">Copy</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="code-body">
+				<pre class="js"><code class="javascript" id="snippet-code-npm-js">
+// import latest
+import { numbers } from "https://deno.land/x/npm:numbers/index.js";
+
+// import version
+import { numbers } from "https://deno.land/x/npm:numbers@v0.7.0/index.js";
+				</code></pre>
+				<pre class="ts"><code class="typescript" id="snippet-code-npm-ts">
+// import latest
+import { numbers } from "https://deno.land/x/npm:numbers/index.js";
+
+// import version
+import { numbers } from "https://deno.land/x/npm:numbers@v0.7.0/index.js";
+				</code></pre>		
+			</div>
+		</div>
+		<div class="console spacer">deno run npm.<span class="ts">ts</span><span class="js">js</span></div>
+	</div>
+</div>
+
+<!-- Leave One Example Below This Line -->
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
 		<h3 id="blank">Blank Sample For Contributors</h3>
 		<p>
 			Do a push request on the <a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="small-icon"> repository</a> to add code snippets or make improvements.
@@ -396,7 +437,6 @@ const p = Deno.run({
 				</code></pre>		
 			</div>
 		</div>
-		<div class="console spacer">deno run app.<span class="ts">ts</span><span class="js">js</span></div>
+		<div class="console spacer">deno run blank.<span class="ts">ts</span><span class="js">js</span></div>
 	</div>
 </div>
-
