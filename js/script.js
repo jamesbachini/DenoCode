@@ -72,7 +72,7 @@ const loadModules = async (filter=false) => {
       </div>`;
 	});
 	document.getElementById('modules-container').innerHTML = html;
-	start();
+	setupButtons();
 }
 
 const addCanonical = (fullURL) => {
@@ -148,15 +148,7 @@ const switchLanguage = (lang) => {
 	localStorage.setItem('lang', lang);
 };
 
-
-const start = async () => {
-	await routes();
-
-	hljs.configure({tabReplace: '  '})
-	document.querySelectorAll('pre code').forEach((block) => {
-		hljs.highlightBlock(block);
-	});
-
+const setupButtons = async () => {
 	document.querySelectorAll('.button-js').forEach((el) => {
 		el.onclick = () => {
 			switchLanguage('js');
@@ -192,6 +184,18 @@ const start = async () => {
 			loadModules(document.getElementById('input-module-search').value);
 		}
 	}
+}
+
+
+const start = async () => {
+	await routes();
+
+	hljs.configure({tabReplace: '  '})
+	document.querySelectorAll('pre code').forEach((block) => {
+		hljs.highlightBlock(block);
+	});
+
+	setupButtons();
 
 	if (localStorage.lang) {
 		switchLanguage(localStorage.lang);
