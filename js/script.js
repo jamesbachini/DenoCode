@@ -75,56 +75,39 @@ const loadModules = async (filter=false) => {
 	setupButtons();
 }
 
-const addCanonical = (fullURL) => {
-	const c = document.createElement('link'); 
-	c.rel = 'canonical'; 
-	c.href = fullURL; 
-	document.head.appendChild(c);
-}
-
 const routes = async () => {
 	if (utils.get.page && utils.get.page === 'terms') {
 		await utils.loadPage('pages/terms.html','content', (pageContent) => {
 			return pageContent.split('[brand]').join(brand);
 		});
-		addCanonical('https://denocode.com/?page=terms');
 	} else if (utils.get.page && utils.get.page === 'privacy') {
 		await utils.loadPage('pages/privacy.html','content', (pageContent) => {
 			return pageContent.split('[brand]').join(brand);
 		});
-		addCanonical('https://denocode.com/?page=privacy');
 	} else if (utils.get.page && utils.get.page === 'start') {
 		await utils.loadPage('pages/start.html','content');
 		document.title = 'How To Get Started With Deno';
-		addCanonical('https://denocode.com/?page=start');
 	} else if (utils.get.page && utils.get.page === 'examples') {
 		await utils.loadPage('pages/examples.html','content');
 		document.title = 'Deno Example Code';
-		addCanonical('https://denocode.com/?page=examples');
 	} else if (utils.get.page && utils.get.page === 'snippets') {
 		await utils.loadPage('pages/snippets.html','content');
 		document.title = 'Deno Code Snippets';
-		addCanonical('https://denocode.com/?page=snippets');
 	} else if (utils.get.page && utils.get.page === 'modules') {
 		await utils.loadPage('pages/modules.html','content');
 		document.title = 'Deno Modules, Packages &amp; Libraries';
 		loadModules();
-		addCanonical('https://denocode.com/?page=modules');
 	} else if (utils.get.page && utils.get.page === 'community') {
 		await utils.loadPage('pages/community.html','content');
 		document.title = 'Deno Community Websites';
-		addCanonical('https://denocode.com/?page=community');
 	} else if (utils.get.page && utils.get.page === 'errors') {
 		await utils.loadPage('pages/errors.html','content');
 		document.title = 'Deno Error Codes &amp; Solutions';
-		addCanonical('https://denocode.com/?page=errors');
 	} else if (utils.get.page && utils.get.page === 'deno-vs-node') {
 		await utils.loadPage('pages/deno-vs-node.html','content');
 		document.title = 'Deno vs Node.js | Comparison & Performance';
-		addCanonical('https://denocode.com/?page=deno-vs-node');
 	} else {
 		document.title = 'DenoCode | Deno Developer Site';
-		addCanonical('https://denocode.com/');
 	}
 	return false;
 };
