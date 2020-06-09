@@ -64,7 +64,7 @@ const loadModules = async (filter=false) => {
 							</div>
 						</div>
 					</div>
-					<div class="module-include spacer full-width text-center" id="module-import-${m.repo}">${importCode}</div>
+					<div class="module-include spacer text-center" id="module-import-${m.repo}">${importCode}</div>
 					<div class="module-buttons">
 						${buttons}
 					</div>
