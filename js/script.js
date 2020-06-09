@@ -107,6 +107,7 @@ const routes = async () => {
 		await utils.loadPage('pages/deno-vs-node.html','content');
 		document.title = 'Deno vs Node.js | Comparison & Performance';
 	} else {
+		await utils.loadPage('pages/home.html','content');
 		document.title = 'DenoCode | Deno Developer Site';
 	}
 	return false;
