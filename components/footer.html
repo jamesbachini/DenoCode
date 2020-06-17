@@ -1,0 +1,150 @@
+<style>
+	.footer {
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 20px;
+		line-height: 20px;
+		background: #212229F7;
+		font-size: 11px;
+		color: #AAA;
+		text-align: right;
+	}
+	.footer a, .footer a:visited, .footer a:active, .footer a:hover {
+		color: #EEE;
+		text-decoration: none;
+	}
+
+	.credits {
+		margin-right: 20px;
+		font-size: 0.7em;
+	}
+
+	#modal {
+		position: absolute;
+		left: 10%;
+		right: 10%;
+		top: 10%;
+		background: rgba(255, 255, 255, 0.95);
+		border: solid 3px rgba(90,90,90);
+		padding: 3%;
+		text-align: center;
+		z-index: 999991;
+	}
+	#modal-close {
+		position: absolute;
+		right: -7px;
+		top: -7px;
+		cursor: pointer;
+		height: 30px;
+		width: 30px;
+	}
+
+	#pixels {
+		position: absolute;
+		left: 0%;
+		right: 0%;
+		width: 1px;
+		height: 1px;
+		opacity: 0.1;
+		overflow: hidden;
+	}
+
+	#error-report {
+		position: absolute;
+		bottom: 1%;
+		left: 1%;
+		width: 30%;
+		background: rgba(20, 0, 0, 0.8);
+		color: #EEE;
+		border-radius: 20px;
+		padding: 1%;
+		z-index: 999994;
+		border: 1px solid #b4303b;
+	}
+
+	@media only screen and (max-width: 720px) {
+		#modal-close {
+			width: 20px;
+			height: 20px;
+		}
+	}
+</style>
+
+<div class="full-width bkg-light-grey">
+	<div class="container v-padding">
+		<div class="full-width text-center">
+			<h3>Where next?</h3>
+		</div>
+		<div class="flex-row flex-wrap where-next-container">
+			<a href="/?page=start">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/laptop-code.svg" class="where-next-icon" />
+					<br>
+					Start
+				</div>
+			</a>
+			<a href="/?page=examples">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/window-restore.svg" class="where-next-icon" />
+					<br>
+					Examples
+				</div>
+			</a>
+			<a href="/?page=snippets">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/file-code.svg" class="where-next-icon" />
+					<br>
+					Snippets
+				</div>
+			</a>
+			<a href="/?page=errors">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/exclamation-triangle.svg" class="where-next-icon" />
+					<br>
+					Errors
+				</div>
+			</a>
+			<a href="/?page=deno-vs-node">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/fighter-jet.svg" class="where-next-icon" />
+					<br>
+					Deno vs Node
+				</div>
+			</a>
+			<a href="/?page=community">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/users.svg" class="where-next-icon" />
+					<br>
+					Community
+				</div>
+			</a>
+			<a href="/?page=modules">
+				<div class="flex-1 where-next-box">
+					<img src="img/icons/rockets.svg" class="where-next-icon" />
+					<br>
+					Module Directory
+				</div>
+			</a>
+		</div>
+		<div class="spacer">&nbsp;</div>
+	</div>
+	<hr class="light-grey">
+</div>
+
+<div class="footer">
+	<div class="container">
+		<div class="legal-container pull-left">
+			<a href="/?page=terms" target="_blank">Terms</a>
+			<a href="/?page=privacy" target="_blank">Privacy</a>
+		</div>
+		<div class="copyright">This website is open-source. <a href="https://github.com/jamesbachini/DenoCode" target="_blank">Contribute <img src="img/icons/github.svg" class="menu-icon"></a></div>
+	</div>
+</div>
+<div id="modal" class="hidden">
+	<img src="img/icons/close.svg" id="modal-close" />
+	<div id="modal-content"></div>
+</div>
+<div id="pixels"></div>
+<div id="error-report" class="hidden"></div>

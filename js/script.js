@@ -1,10 +1,11 @@
-import { utils } from './utils.js';
+import { utils } from './../core/utils.js';
+import { core } from './../core/core.js';
 
-utils.init();
+window.vSettings = {
+	brand: 'DenoCode',
+}
 
-const brand = 'DenoCode';
-
-const loadModules = async (filter=false) => {
+window.loadDenoModules = async (filter=false) => {
 	const modules = await utils.loadJSON('modules.json');
 	let html = '';
 	const sortable = [];
@@ -28,7 +29,7 @@ const loadModules = async (filter=false) => {
 			const searchString = `${m.repo} ${m.owner} ${m.desc}`.toLowerCase();
 			if (!searchString.includes(filterLC)) return false;
 		}
-		const variableName = utils.camelize(m.repo.split('-').join(' ').split('_').join(''));
+		const variableName = utils.camelCase(m.repo.split('-').join(' ').split('_').join(''));
 		let importCode = 'import url unknown';
 		if (m.url && m.url !== 'unknown') importCode = `import { ${variableName} } from '${m.url}';`
 		let buttons = `<button class="button-open-link button-module" data-selection="https://github.com/${m.owner}/${m.repo}/#readme">📄 README</button> `;
@@ -74,44 +75,6 @@ const loadModules = async (filter=false) => {
 	document.getElementById('modules-container').innerHTML = html;
 	setupButtons();
 }
-
-const routes = async () => {
-	if (utils.get.page && utils.get.page === 'terms') {
-		await utils.loadPage('pages/terms.html','content', (pageContent) => {
-			return pageContent.split('[brand]').join(brand);
-		});
-	} else if (utils.get.page && utils.get.page === 'privacy') {
-		await utils.loadPage('pages/privacy.html','content', (pageContent) => {
-			return pageContent.split('[brand]').join(brand);
-		});
-	} else if (utils.get.page && utils.get.page === 'start') {
-		await utils.loadPage('pages/start.html','content');
-		document.title = 'How To Get Started With Deno';
-	} else if (utils.get.page && utils.get.page === 'examples') {
-		await utils.loadPage('pages/examples.html','content');
-		document.title = 'Deno Example Code';
-	} else if (utils.get.page && utils.get.page === 'snippets') {
-		await utils.loadPage('pages/snippets.html','content');
-		document.title = 'Deno Code Snippets';
-	} else if (utils.get.page && utils.get.page === 'modules') {
-		await utils.loadPage('pages/modules.html','content');
-		document.title = 'Deno Modules, Packages &amp; Libraries';
-		loadModules();
-	} else if (utils.get.page && utils.get.page === 'community') {
-		await utils.loadPage('pages/community.html','content');
-		document.title = 'Deno Community Websites';
-	} else if (utils.get.page && utils.get.page === 'errors') {
-		await utils.loadPage('pages/errors.html','content');
-		document.title = 'Deno Error Codes &amp; Solutions';
-	} else if (utils.get.page && utils.get.page === 'deno-vs-node') {
-		await utils.loadPage('pages/deno-vs-node.html','content');
-		document.title = 'Deno vs Node.js | Comparison & Performance';
-	} else {
-		await utils.loadPage('pages/home.html','content');
-		document.title = 'DenoCode | Deno Developer Site';
-	}
-	return false;
-};
 
 
 const switchLanguage = (lang) => {
@@ -170,10 +133,10 @@ const setupButtons = async () => {
 	}
 }
 
-
 const start = async () => {
-	await routes();
+	await core.init();
 
+	console.log('Check',document.getElementById('start-basic-server-ts'));
 	hljs.configure({tabReplace: '  '})
 	document.querySelectorAll('pre code').forEach((block) => {
 		hljs.highlightBlock(block);

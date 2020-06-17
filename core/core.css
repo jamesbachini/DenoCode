@@ -1,0 +1,272 @@
+body, html {
+	border: 0;
+	margin: 0;
+	width: 100%;
+	min-height: 100%;
+	font-family: Arial, sans-serif;
+	letter-spacing: 1px;
+	font-weight: 300;
+	font-size: 16px;
+	color: #212229;
+}
+
+h1, h2, h3, h4, h5 {
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+
+[contenteditable]:focus {
+	outline: 0px solid transparent;
+}
+
+hr {
+	color: #212229;
+}
+
+button {
+	border-radius: 99px;
+	border: none;
+	padding: 5px 20px;
+	background: #6c63ff;
+	color: #EEE;
+	cursor: pointer;
+}
+
+section {
+	overflow: auto;
+}
+
+#content {
+	margin-top: 40px; /* push down from top menu */
+	min-height: 80%; /* Web core vitals */
+}
+
+.container {
+	max-width: 800px;
+	margin: 0px auto;
+	padding: 0px 5px;
+}
+
+/* Utility CSS */
+.hidden {
+	display: none;
+}
+.desktop-hidden {
+	display: none;
+}
+.spacer {
+	margin: 10px;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.icon {
+	height: 14px;
+	margin-bottom: -2px;
+}
+.invert {
+	filter: invert(1); 
+}
+.blur {
+	filter: blur(10px);
+}
+.bold {
+	font-weight: 700;
+}
+.heavy {
+	font-weight: 900;
+}
+.normal {
+	font-weight: 400;
+}
+.light	 {
+	font-weight: 200;
+}
+.responsive-width {
+	max-width: 100%;
+}
+.responsive-height {
+	max-height: 100%;
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.overflow-auto {
+	overflow: auto;
+}
+.display-inline {
+	display: inline;
+}
+.display-block {
+	display: block;
+}
+.position-relative {
+	position: relative;
+}
+.position-absolute {
+	position: absolute;
+}
+.border-rounded {
+	border-radius: 5px;
+}
+.border-circle {
+	border-radius: 999px;
+}
+.box-shadow {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* Button CSS */
+.small-button {
+	font-size: 0.8em;
+	padding: 2px 5px;
+}
+.big-button {
+	font-size: 1.5em;
+	padding: 15px 50px;
+}
+
+/* Text CSS */
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-black {
+	color: #000;
+}
+.text-white {
+	color: #FFF;
+}
+.text-grey {
+	color: #888;
+}
+.text-red {
+	color: #b4303b;
+}
+.text-green {
+	color: #256430;
+}
+.text-small {
+	font-size: 0.8em;
+}
+.text-big {
+	font-size: 1.2em;
+}
+
+/* Background CSS */
+.bkg-black {
+	background: #000;
+}
+.bkg-white {
+	background: #FFF;
+}
+.bkg-alt {
+	background: #F7F7F7;
+}
+.bkg-grey {
+	background: #888;
+}
+.bkg-red {
+	background: #b4303b;
+}
+.bkg-green {
+	background: #256430;
+}
+
+/* FlexBox CSS */
+.flex {
+	display: flex;
+}
+.flex-column {
+	display: flex;
+	align-items:center;
+	flex-flow: column nowrap;
+}
+.flex-row {
+	display: flex;
+	align-items:center;
+	flex-flow: row nowrap;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.flex-grow {
+	flex-grow: 1;
+}
+.flex-end {
+	align-items: flex-end;
+}
+.flex-start {
+	align-items: flex-start;
+}
+.flex-center {
+	align-items: center;
+}
+.flex-middle {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.flex-around {
+	justify-content: space-around;
+}
+.flex-between {
+	justify-content: space-between;
+}
+.flex-1 {
+	flex: 1;
+}
+.flex-2 {
+	flex: 2;
+}
+.flex-3 {
+	flex: 3;
+}
+.flex-4 {
+	flex: 4;
+}
+
+/* Table CSS */
+table.td, table.th {
+	padding: 5px;
+}
+table thead {
+	background: #6c63ff;
+	color: #FFF;
+}
+table thead th {
+	padding: 5px;
+	font-weight: 400;
+}
+table tr:nth-child(even) {
+	background: #F7F7F7;
+}
+
+/* Form CSS */
+input[type=text],input[type=email],input[type=password] {
+	outline: none;
+	padding: 5px 10px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+}
+
+/* Mobile CSS */
+@media only screen and (max-width: 720px) {
+	.desktop-hidden {
+		display: inherit;
+	}
+	.mobile-hidden {
+		display: none;
+	}
+}

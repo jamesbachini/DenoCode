@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="core/core.css?v=0.0.1" rel="stylesheet">
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 	<link href="css/vscode.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link rel="shortcut icon" href="img/icons/icon.png">
-	<title></title>
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<meta property="og:title" content="DenoCode | Javascript & Typescript Server-side Code">
+  <link href="css/style.css?v=0.0.1" rel="stylesheet">
+  <link rel="shortcut icon" href="img/icons/icon.png">
+  <title></title>
+  <meta name="description" content="">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta property="og:title" content="DenoCode | Javascript & Typescript Server-side Code">
 	<meta property="og:description" content="A modern, secure, robust and fast alternative JS & TS runtime from the developer of Node.js">
 	<meta property="og:image" content="https://denocode.com/img/social-card.png">
 	<meta property="og:url" content="https://denocode.com">
@@ -22,140 +24,18 @@
 	<meta name="twitter:title" content="DenoCode | Javascript & Typescript Server-side Code">
 	<meta name="twitter:description" content="A modern, secure, robust and fast alternative JS & TS runtime from the developer of Node.js">
 	<meta name="twitter:image" content="https://denocode.com/img/social-card.png">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48537439-24"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'AW-798029816');
-		gtag('config', 'UA-48537439-24');
-	</script>
-	<!-- Facebook Pixel Code -->
-	<script>
-		!function(f,b,e,v,n,t,s)
-		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-		n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];
-		s.parentNode.insertBefore(t,s)}(window, document,'script',
-		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '500910373434901');
-		fbq('track', 'PageView');
-	</script>
-	<!-- Twitter universal website tag code -->
-	<script>
-		!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-		},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
-		a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-		// Insert Twitter Pixel ID and Standard Event data below
-		twq('init','nzum9');
-		twq('track','PageView');
-	</script>
-	<script>document.write(`<link rel="canonical" href="${document.location}" />`);</script>
 </head>
 <body>
-	<div class="top-bar">
-		<div class="container">
-			<a href="/">
-				<img src="img/icons/icon.svg" class="logo-icon" />
-				<div class="logo-text">DenoCode</div>
-			</a>
-			<img src="img/icons/burger.svg" id="burger" class="toggle-menu desktop-hidden" />
-			<nav id="menu" class="menu mobile-hidden">
-				<img src="img/icons/close.svg" id="menu-close" class="toggle-menu desktop-hidden" />
-				<ul>
-					<li><a href="/?page=start">Start</a></li>
-					<li><a href="/?page=examples">Examples</a></li>
-					<li><a href="/?page=snippets">Snippets</a></li>
-					<li><a href="/?page=modules">Modules</a></li>
-					<li><a href="/?page=community">Community</a></li>
-					<li><a href="https://github.com/jamesbachini/DenoCode" target="_blank"><img src="img/icons/github.svg" class="menu-icon"></a></li>
-				</ul>
-			</nav>
-			<div class="clear"></div>
-		</div>
+  <div id="header">
+		<!-- components/header.html -->
 	</div>
-	<div id="content">
-		<!-- main content injected here -->
+  <div id="content">
+    <!-- pages/home.html -->
+  </div>
+	<div id="footer">
+		<!-- components/footer.html -->
 	</div>
-	<div class="full-width bkg-light-grey">
-		<div class="container v-padding">
-			<div class="full-width text-center">
-				<h3>Where next?</h3>
-			</div>
-			<div class="flex-row flex-wrap where-next-container">
-				<a href="/?page=start">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/laptop-code.svg" class="where-next-icon" />
-						<br>
-						Start
-					</div>
-				</a>
-				<a href="/?page=examples">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/window-restore.svg" class="where-next-icon" />
-						<br>
-						Examples
-					</div>
-				</a>
-				<a href="/?page=snippets">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/file-code.svg" class="where-next-icon" />
-						<br>
-						Snippets
-					</div>
-				</a>
-				<a href="/?page=errors">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/exclamation-triangle.svg" class="where-next-icon" />
-						<br>
-						Errors
-					</div>
-				</a>
-				<a href="/?page=deno-vs-node">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/fighter-jet.svg" class="where-next-icon" />
-						<br>
-						Deno vs Node
-					</div>
-				</a>
-				<a href="/?page=community">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/users.svg" class="where-next-icon" />
-						<br>
-						Community
-					</div>
-				</a>
-				<a href="/?page=modules">
-					<div class="flex-1 where-next-box">
-						<img src="img/icons/rockets.svg" class="where-next-icon" />
-						<br>
-						Module Directory
-					</div>
-				</a>
-			</div>
-			<div class="spacer">&nbsp;</div>
-		</div>
-		<hr class="light-grey">
-	</div>
-
-	<div class="footer">
-		<div class="container">
-			<div class="legal-container pull-left">
-				<a href="/?page=terms" target="_blank">Terms</a>
-				<a href="/?page=privacy" target="_blank">Privacy</a>
-			</div>
-			<div class="copyright">This website is open-source. <a href="https://github.com/jamesbachini/DenoCode" target="_blank">Contribute <img src="img/icons/github.svg" class="menu-icon"></a></div>
-		</div>
-	</div>
-	<div id="modal" class="hidden">
-		<img src="img/icons/close.svg" id="modal-close" />
-		<div id="modal-content"></div>
-	</div>
-	<div id="pixels"></div>
-	<div id="error-report" class="hidden"></div>
-	<script type="module" src="js/script.js?v0.0.1"></script>
+  <script nomodule>document.getElementById('content').innerHTML = '<h1>Update your browser</h1>';</script>
+  <script type="module" src="js/script.js?v1.0.2"></script>
 </body>
 </html>
