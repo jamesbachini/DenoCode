@@ -52,7 +52,7 @@ window.loadDenoModules = async (filter=false) => {
         <div class="module-body">
 					<div class="flex-row">
 						<div class="flex-1">
-							<img src="${m.thumbnail}" alt="${m.repo} ${m.repo}" class="module-thumb" />
+							<img src="${m.thumbnail}" alt="${m.repo} ${m.repo}" class="module-thumb" loading="lazy" />
 						</div>
 						<div class="flex-3">
 							<div class="module-description">${m.desc}</div>
