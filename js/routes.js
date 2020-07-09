@@ -22,23 +22,24 @@ export const routes = {
 			utils.setTitle(`${vSettings.brand} Privacy Policy`);
 		} else if (get.page && get.page === 'start') {
 			await utils.loadModule('pages/start.html','content');
-			utils.setTitle('How To Get Started With Deno');
+			utils.setTitle('How To Get Started With Deno | Definitive Guide');
 		} else if (get.page && get.page === 'examples') {
 			await utils.loadModule('pages/examples.html','content');
-			utils.setTitle('Deno Example Code');
+			utils.setTitle('6 Deno Code Examples | Deno Example Code');
+			utils.setDescription('Deno code examples including OAK with CORS, websockets, testing and docker');
 		} else if (get.page && get.page === 'snippets') {
 			await utils.loadModule('pages/snippets.html','content');
 			utils.setTitle('Deno Code Snippets');
 		} else if (get.page && get.page === 'modules') {
 			await utils.loadModule('pages/modules.html','content');
-			utils.setTitle('Deno Modules, Packages &amp; Libraries');
+			utils.setTitle('Deno Modules, Packages & Libraries');
 			loadDenoModules();
 		} else if (get.page && get.page === 'community') {
 			await utils.loadModule('pages/community.html','content');
-			utils.setTitle('Deno Community Websites');
+			utils.setTitle('Deno Community Websites | Meet Deno Developers');
 		} else if (get.page && get.page === 'errors') {
 			await utils.loadModule('pages/errors.html','content');
-			utils.setTitle('Deno Error Codes &amp; Solutions');
+			utils.setTitle('Deno Error Codes & Solutions');
 		} else if (get.page && get.page === 'deno-vs-node') {
 			await utils.loadModule('pages/deno-vs-node.html','content');
 			utils.setTitle('Deno vs Node.js | Comparison & Performance');
@@ -51,7 +52,7 @@ export const routes = {
 		} else {
 			// load home page if no page= variable specified in URL
 			await utils.loadModule('pages/home.html','content');
-			utils.setTitle('DenoCode | Deno Developer Site');
+			utils.setTitle('DenoCode | Deno Developer Portal');
 			utils.setDescription(`DenoCode is the developer site for Deno - The modern Javascript runtime from the creator of Node.JS`);
 		}
 		return true;
